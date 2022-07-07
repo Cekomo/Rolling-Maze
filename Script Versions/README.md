@@ -1,0 +1,1 @@
+This folder includes the scripts of different versions of the game. 
