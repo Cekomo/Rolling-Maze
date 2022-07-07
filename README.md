@@ -1,4 +1,4 @@
-## Rolling Maze
+# Rolling Maze
  Try to escape from circular maze by rolling the ball.
  
 # Developer Note
