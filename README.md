@@ -5,7 +5,7 @@
 This game is special for me because it helped me to learn Unity while working on the game roughly 2 months.
 I believe the outcome is worth to work on it :). For now, only Android version is available but I will add
 IOS version after testing the game on Apple devices.
-All the parts of the was built by me.
+All the parts of the game was built by me.
 
 # Features of the game
 - 5 unique map built on blender.
