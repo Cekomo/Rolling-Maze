@@ -16,7 +16,7 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     private void FixedUpdate()
     {
         if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
-        
+
         StartCoroutine(MoveBall());
         PlayerTouchController.SwipeDirection = SwipeDirection.None;
     }
@@ -51,8 +51,10 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     {
         // var start = _rbBall.transform.position;
         AddTorque();
+        MazeMovementController.PreventTurning = true;
         yield return new WaitForSeconds(ROLLING_TIME);
         RevertTorque();
+        MazeMovementController.PreventTurning = false;
         // print(_rbBall.transform.position.z - start.z);
     }
 }
