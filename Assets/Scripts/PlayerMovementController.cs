@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    private const float TORQUE = 20;
+    private const float TORQUE = 100;
 
     private static Rigidbody _rbBall;
 
@@ -15,11 +16,11 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
         
-        MoveBall();
+        StartCoroutine(MoveBall());
         PlayerTouchController.SwipeDirection = SwipeDirection.None;
     }
 
-    private static void MoveBall()
+    private static void AddTorque() // mass = 3
     {
         if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
     
@@ -36,5 +37,20 @@ public class PlayerMovementController : MonoBehaviour
                 _rbBall.AddTorque(Vector3.forward * TORQUE);
                 break;
         }
+    }
+
+    private static void RevertTorque()
+    {
+        _rbBall.angularVelocity = Vector3.zero;
+        _rbBall.velocity = Vector3.zero;
+    }
+    
+    private static IEnumerator MoveBall()
+    {
+        // var start = _rbBall.transform.position;
+        AddTorque();
+        yield return new WaitForSeconds(1f);
+        RevertTorque();
+        // print(_rbBall.transform.position.z - start.z);
     }
 }
