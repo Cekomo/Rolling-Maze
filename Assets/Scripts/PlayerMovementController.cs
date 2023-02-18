@@ -17,7 +17,21 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     {
         if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
 
-        StartCoroutine(MoveBall());
+        switch (PlayerTouchController.SwipeDirection)
+        {
+            case SwipeDirection.Up:
+                StartCoroutine(MoveBall());
+                break;
+            case SwipeDirection.Right:
+                // appears to roll the ball towards right
+                MazeMovementController.RotationDirection = -1;
+                break;
+            case SwipeDirection.Left:
+                // appears to roll the ball towards left
+                MazeMovementController.RotationDirection = 1;
+                break;
+        }
+        
         PlayerTouchController.SwipeDirection = SwipeDirection.None;
     }
 
@@ -32,10 +46,12 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
                 _rbBall.AddTorque(Vector3.right * TORQUE);
                 break;
             case SwipeDirection.Right:
-                _rbBall.AddTorque(Vector3.back * TORQUE);
+                MazeMovementController.RotationDirection = -1;
+                // _rbBall.AddTorque(Vector3.back * TORQUE);
                 break;
             case SwipeDirection.Left:
-                _rbBall.AddTorque(Vector3.forward * TORQUE);
+                MazeMovementController.RotationDirection = 1;
+                // _rbBall.AddTorque(Vector3.forward * TORQUE);
                 break;
         }
     }
@@ -44,17 +60,16 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     {
         _rbBall.angularVelocity = Vector3.zero;
         _rbBall.velocity = Vector3.zero;
-        print(_rbBall.transform.position.z);
     }
     
     private static IEnumerator MoveBall()
     {
         // var start = _rbBall.transform.position;
         AddTorque();
-        MazeMovementController.PreventTurning = true;
+        MazeMovementController.PreventRotation = true;
         yield return new WaitForSeconds(ROLLING_TIME);
         RevertTorque();
-        MazeMovementController.PreventTurning = false;
+        MazeMovementController.PreventRotation = false;
         // print(_rbBall.transform.position.z - start.z);
     }
 }
