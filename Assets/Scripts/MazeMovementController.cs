@@ -11,7 +11,7 @@ public class MazeMovementController : MonoBehaviour
     {
         if (PreventRotation) return;
     
-        transform.Rotate(0f, RotationDirection() * rotationSpeed * Time.deltaTime, 0f);
+        transform.Rotate(0f, GetRotationDirection() * rotationSpeed * Time.deltaTime, 0f);
     }
 
     public static void RotateTowards(int rotationMultiplier)
@@ -19,7 +19,7 @@ public class MazeMovementController : MonoBehaviour
         _rotationDirection = rotationMultiplier;
     }
     
-    public static int RotationDirection()
+    public static int GetRotationDirection()
     {
         return _rotationDirection;
     }

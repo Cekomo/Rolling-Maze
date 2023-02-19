@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,12 +6,14 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
     private const float TORQUE = 195;
     private const float ROLLING_TIME = 1f;
 
+    private const float ROLLING_SPEED = 45f;
+
     private static Rigidbody _rbBall;
 
     private void Start()
     {
         _rbBall = GetComponent<Rigidbody>();
-        _rbBall.maxAngularVelocity = 20.0f;
+        _rbBall.maxAngularVelocity = 15.0f;
     }
 
     private void Update()
@@ -32,11 +33,9 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
                 StartCoroutine(MoveBall());
                 break;
             case SwipeDirection.Right:
-                // appears to roll the ball towards right
                 MazeMovementController.RotateTowards(-1);
                 break;
             case SwipeDirection.Left:
-                // appears to roll the ball towards left
                 MazeMovementController.RotateTowards(1);
                 break;
         }
@@ -68,34 +67,8 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
 
     private void RotateInPlace()
     {
-        // transform.Rotate(Vector3.up, 45f * Time.deltaTime, Space.Self);
-        // transform.Rotate(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
-        // transform.rotation *= 
-        //     Quaternion.Euler(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
-        transform.rotation *= 
-            Quaternion.Euler(0f, 0f, 45f * Time.deltaTime * -MazeMovementController.RotationDirection());
+        transform.Rotate(0f, 0f, 
+            MazeMovementController.GetRotationDirection() * ROLLING_SPEED * Time.deltaTime, 
+            Space.World);
     }
 }
-
-/*
- * private static void AddTorque() // mass = 3
-    {
-        if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
-    
-        // do not confuse with vector3 directions, it is torque implementation
-        switch (PlayerTouchController.SwipeDirection)
-        {
-            case SwipeDirection.Up:
-                _rbBall.AddTorque(Vector3.right * TORQUE);
-                break;
-            case SwipeDirection.Right:
-                print("a");
-                MazeMovementController.RotationDirection = -1;
-                // _rbBall.AddTorque(Vector3.back * TORQUE);
-                break;
-            case SwipeDirection.Left:
-                // _rbBall.AddTorque(Vector3.forward * TORQUE);
-                break;
-        }
-    }
-*/
