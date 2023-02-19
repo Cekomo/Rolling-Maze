@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
+public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
-    private const float TORQUE = 100;
+    private const float TORQUE = 300;
     private const float ROLLING_TIME = 1f;
 
     private static Rigidbody _rbBall;
@@ -11,6 +12,13 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     private void Start()
     {
         _rbBall = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (MazeMovementController.PreventRotation) return;
+        
+        RotateInPlace();
     }
 
     private void FixedUpdate()
@@ -38,22 +46,7 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     private static void AddTorque() // mass = 3
     {
         if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
-    
-        // do not confuse with vector3 directions, it is torque implementation
-        switch (PlayerTouchController.SwipeDirection)
-        {
-            case SwipeDirection.Up:
-                _rbBall.AddTorque(Vector3.right * TORQUE);
-                break;
-            case SwipeDirection.Right:
-                MazeMovementController.RotationDirection = -1;
-                // _rbBall.AddTorque(Vector3.back * TORQUE);
-                break;
-            case SwipeDirection.Left:
-                MazeMovementController.RotationDirection = 1;
-                // _rbBall.AddTorque(Vector3.forward * TORQUE);
-                break;
-        }
+        _rbBall.AddTorque(Vector3.right * TORQUE);
     }
 
     private static void RevertTorque()
@@ -64,12 +57,43 @@ public class PlayerMovementController : MonoBehaviour // 1.828, 3.655..
     
     private static IEnumerator MoveBall()
     {
-        // var start = _rbBall.transform.position;
         AddTorque();
         MazeMovementController.PreventRotation = true;
         yield return new WaitForSeconds(ROLLING_TIME);
+        
         RevertTorque();
         MazeMovementController.PreventRotation = false;
-        // print(_rbBall.transform.position.z - start.z);
+    }
+
+    private void RotateInPlace()
+    {
+        // transform.Rotate(Vector3.up, 45f * Time.deltaTime, Space.Self);
+        // transform.Rotate(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
+        // transform.rotation *= 
+        //     Quaternion.Euler(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
+        transform.rotation *= Quaternion.Euler(0f, 0f, 45f * Time.deltaTime);
     }
 }
+
+/*
+ * private static void AddTorque() // mass = 3
+    {
+        if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
+    
+        // do not confuse with vector3 directions, it is torque implementation
+        switch (PlayerTouchController.SwipeDirection)
+        {
+            case SwipeDirection.Up:
+                _rbBall.AddTorque(Vector3.right * TORQUE);
+                break;
+            case SwipeDirection.Right:
+                print("a");
+                MazeMovementController.RotationDirection = -1;
+                // _rbBall.AddTorque(Vector3.back * TORQUE);
+                break;
+            case SwipeDirection.Left:
+                // _rbBall.AddTorque(Vector3.forward * TORQUE);
+                break;
+        }
+    }
+*/

@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed620a2b17f744dd4b073774b8669037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RotationSpeed: 10
 --- !u!54 &574706249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -563,6 +564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: maze3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a0763956c2b84b73b73ff5957443a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0763956c2b84b73b73ff5957443a90, type: 3}
 --- !u!1 &1702268631
@@ -675,7 +680,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726508625}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8cd783e58b3d74f0ea3d17b5a1202f6b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
