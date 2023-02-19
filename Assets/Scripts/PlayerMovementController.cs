@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
-    private const float TORQUE = 300;
+    private const float TORQUE = 195;
     private const float ROLLING_TIME = 1f;
 
     private static Rigidbody _rbBall;
@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
     private void Start()
     {
         _rbBall = GetComponent<Rigidbody>();
+        _rbBall.maxAngularVelocity = 20.0f;
     }
 
     private void Update()
@@ -32,11 +33,11 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
                 break;
             case SwipeDirection.Right:
                 // appears to roll the ball towards right
-                MazeMovementController.RotationDirection = -1;
+                MazeMovementController.RotateTowards(-1);
                 break;
             case SwipeDirection.Left:
                 // appears to roll the ball towards left
-                MazeMovementController.RotationDirection = 1;
+                MazeMovementController.RotateTowards(1);
                 break;
         }
         
@@ -71,7 +72,8 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
         // transform.Rotate(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
         // transform.rotation *= 
         //     Quaternion.Euler(0, 0, 45f * Time.deltaTime * -MazeMovementController.RotationDirection);
-        transform.rotation *= Quaternion.Euler(0f, 0f, 45f * Time.deltaTime);
+        transform.rotation *= 
+            Quaternion.Euler(0f, 0f, 45f * Time.deltaTime * -MazeMovementController.RotationDirection());
     }
 }
 
