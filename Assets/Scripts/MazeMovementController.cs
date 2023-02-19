@@ -2,22 +2,24 @@ using UnityEngine;
 
 public class MazeMovementController : MonoBehaviour
 {   // coupling in playerMovementController class, for booleans, handle if you can
-    private static float angularSpeed = 60f;
-    private static float currentPathRadius = 1.825f;
+    private const float RADIUS_RING_DIFFERENCE = 1.825f;
+    private static float _angularSpeed = 100f;
+    private static float _currentPathRadius = 1.825f;
 
-    public static bool PreventRotation = true;
     private static int _rotationDirection = 1;
-    
+    public static bool PreventRotation = true;
+
     private void Update()
     {
         if (PreventRotation) return;
-    
-        transform.Rotate(0f, GetRotationDirection() * angularSpeed * Time.deltaTime, 0f);
+        
+        transform.Rotate(0f, GetRotationDirection() * _angularSpeed * Time.deltaTime, 0f);
     }
 
-    public static void AdjustAngularSpeed()
+    public static void AdjustAngularSpeed() // angular speed per ring seems okay
     {
-        angularSpeed = angularSpeed * currentPathRadius / (currentPathRadius + Mathf.Sqrt(1.825f));
+        _angularSpeed = _angularSpeed * _currentPathRadius / (_currentPathRadius + RADIUS_RING_DIFFERENCE);
+        _currentPathRadius += RADIUS_RING_DIFFERENCE;
     }
     
     public static void RotateTowards(int rotationMultiplier)
