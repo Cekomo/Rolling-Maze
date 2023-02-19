@@ -5,8 +5,7 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
 {
     private const float TORQUE = 195;
     private const float ROLLING_TIME = 1f;
-
-    private const float ROLLING_SPEED = 45f;
+    private const float ROLLING_SPEED = 180f;
 
     private static Rigidbody _rbBall;
 
