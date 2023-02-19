@@ -31,6 +31,7 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
         {
             case SwipeDirection.Up:
                 StartCoroutine(MoveBall());
+                MazeMovementController.AdjustAngularSpeed();
                 break;
             case SwipeDirection.Right:
                 MazeMovementController.RotateTowards(-1);
