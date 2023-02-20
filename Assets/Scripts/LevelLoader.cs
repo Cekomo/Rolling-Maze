@@ -2,9 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelLoader : MonoBehaviour
+public static class LevelLoader
 {
-    [SerializeField] private GameObject nextLevelPlane;
+    private static int _levelIndex;
     
-    
+    public static void LoadLevel()
+    {
+        
+    }
+
+    private static int GetLevelIndex()
+    {
+        return _levelIndex;
+    }
+
+    private static void SaveLevel()
+    {
+        
+    }
 }
