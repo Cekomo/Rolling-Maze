@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
-    private const float TORQUE = 195;
+    private const float TORQUE = 197; // make this accurate
     private const float ROLLING_TIME = 1f;
     private const float ROLLING_SPEED = 180f;
 
