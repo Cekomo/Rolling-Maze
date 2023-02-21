@@ -2,21 +2,18 @@ using UnityEngine;
 
 public static class LevelLoader
 {
-    private static int _levelIndex;
-
     public static void LoadLevel()
     {
         // some UI manipulations can be made here
     }
 
-    public static int GetLevelWithOffset(int nextLevelIndex)
+    public static int GetLevel()
     {
-        _levelIndex = PlayerPrefs.GetInt("LevelIndex");
-        return _levelIndex + nextLevelIndex;
+        return PlayerPrefs.GetInt("LevelIndex");
     }
 
     public static void SaveLevel()
     {
-        PlayerPrefs.SetInt("LevelIndex", GetLevelWithOffset(1));
+        PlayerPrefs.SetInt("LevelIndex", GetLevel() + 1);
     }
 }
