@@ -10,15 +10,18 @@
             if (!col.gameObject.CompareTag("Wall")) return;
             
             print("Game Over! Level retried.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            MazeMovementController.ResetRotationBehavior();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
 
-        private void OnTriggerExit(Collider col)
+        private void OnTriggerEnter(Collider col)
         {
             if (!col.gameObject.CompareTag("Finish")) return;
             
             LevelLoader.SaveLevel();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+            MazeMovementController.ResetRotationBehavior();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
             
             mazeManager.InstantiateNewMaze();
             MazeManager.PrepareTheMaze();

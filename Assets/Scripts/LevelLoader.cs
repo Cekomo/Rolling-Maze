@@ -14,6 +14,12 @@ public static class LevelLoader
 
     public static void SaveLevel()
     {
+        if (GetLevel() == MazeModels.MaximumLevel)
+        {
+            Debug.Log("Congrats! You completed all levels.");
+            return;
+        }
+        
         PlayerPrefs.SetInt("LevelIndex", GetLevel() + 1);
     }
 }
