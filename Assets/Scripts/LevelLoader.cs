@@ -9,7 +9,7 @@ public static class LevelLoader
         // some UI manipulations can be made here
     }
 
-    private static int GetLevelWithOffset(int nextLevelIndex)
+    public static int GetLevelWithOffset(int nextLevelIndex)
     {
         _levelIndex = PlayerPrefs.GetInt("LevelIndex");
         return _levelIndex + nextLevelIndex;

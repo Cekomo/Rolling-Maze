@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalScale.x
@@ -587,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -595,7 +595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1173,6 +1173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: maze1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1341056751160186723, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1731,28 +1735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
---- !u!1 &607225155 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
-  m_PrefabInstance: {fileID: 607225154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607225156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
   m_PrefabInstance: {fileID: 607225154}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &607225157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607225155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed620a2b17f744dd4b073774b8669037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &607225158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2140,6 +2127,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 563661983}
+--- !u!1 &1047738717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047738718}
+  - component: {fileID: 1047738719}
+  m_Layer: 0
+  m_Name: Maze
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1047738718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047738717}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1047738719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047738717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed620a2b17f744dd4b073774b8669037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077233207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5252682845850649624, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
@@ -2343,6 +2374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915962332}
   - component: {fileID: 1915962331}
+  - component: {fileID: 1915962333}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2362,7 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f6659c9bd29402db036548b3311f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeModels:
+  mazeModelList:
   - {fileID: 919132149155446097, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
   - {fileID: 919132149155446097, guid: 2c04071b39aef49f28b9bad424072ec0, type: 3}
   - {fileID: 919132149155446097, guid: eb2bc97c02c03454f8dd720f9d82eadc, type: 3}
@@ -2381,6 +2413,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915962333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915962330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88766721d7a444429bdfe4220904f248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeModels: {fileID: 1915962331}
+  mazeContainer: {fileID: 1047738718}
 --- !u!1 &1918650749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3849762623622064168, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}

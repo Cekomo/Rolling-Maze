@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MazeModels : MonoBehaviour
 {
-    public List<GameObject> mazeModels;
+    public List<GameObject> mazeModelList;
 }
