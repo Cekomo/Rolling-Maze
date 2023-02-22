@@ -15,3 +15,16 @@ public class CameraMovementController : MonoBehaviour
         transform.position = target.position + currentOffset;
     }
 }
+
+/*
+ * if (!LevelLoader.IsPaused || Input.touchCount == 0) return;
+        var targetPosition = target.position + FollowingOffset;
+        var cameraPosition = transform.position;
+        var speed = 10f;
+
+        while (Vector3.Distance(cameraPosition, targetPosition) > 0.01f)
+        {
+            cameraPosition = Vector3.MoveTowards(cameraPosition, targetPosition, speed * Time.deltaTime);
+            transform.position = cameraPosition;
+        }
+*/
