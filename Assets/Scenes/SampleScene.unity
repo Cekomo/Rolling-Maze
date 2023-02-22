@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeManager: {fileID: 1915962333}
+  uIManager: {fileID: 1915962334}
 --- !u!1 &570363838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6014503084441653313, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}
@@ -2315,7 +2316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1002154885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2783,7 +2784,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: -125}
-  m_SizeDelta: {x: 400, y: 150}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1910473996
 MonoBehaviour:
@@ -2805,7 +2806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2893,6 +2894,7 @@ GameObject:
   - component: {fileID: 1915962332}
   - component: {fileID: 1915962331}
   - component: {fileID: 1915962333}
+  - component: {fileID: 1915962334}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2945,6 +2947,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeModels: {fileID: 1915962331}
   mazeContainer: {fileID: 1047738718}
+--- !u!114 &1915962334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915962330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a8cd3d44d604cea865af5efa54dd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPanel: {fileID: 1002154884}
+  levelCount: {fileID: 1910473996}
 --- !u!1 &1918650749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3849762623622064168, guid: 7638e25e9e6d1433ebe708fb58beb5b0, type: 3}

@@ -8,9 +8,9 @@ public class MazeManager : MonoBehaviour
     
     public static GameObject CurrentMaze;
     
-    private void Start()
-    {
-        // PlayerPrefs.SetInt("LevelIndex", 0);
+    private void Awake()
+    { // PlayerPrefs.SetInt("LevelIndex", 0);
+        LevelLoader.PauseGame(true);
         InstantiateNewMaze();
         AddColliderToChildren();
         TagChildren();

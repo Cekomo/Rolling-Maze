@@ -17,7 +17,8 @@ public class PlayerTouchController : MonoBehaviour
     private void Update()
     {
         if (Input.touchCount == 0) return;
-        
+        if (LevelLoader.IsPaused) LevelLoader.PauseGame(false);
+
         foreach (var touch in Input.touches)
         {
             switch (touch.phase)
