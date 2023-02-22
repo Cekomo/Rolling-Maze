@@ -8,7 +8,7 @@ public class MazeManager : MonoBehaviour
     
     public static GameObject CurrentMaze;
     
-    private void Awake()
+    private void Start()
     {
         // PlayerPrefs.SetInt("LevelIndex", 0);
         InstantiateNewMaze();

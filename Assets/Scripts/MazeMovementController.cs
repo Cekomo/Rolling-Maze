@@ -19,8 +19,8 @@ public class MazeMovementController : MonoBehaviour
         transform.Rotate(0f, GetRotationDirection() * _angularSpeed * Time.deltaTime, 0f);
     }
 
-    public static void AdjustAngularSpeed() // angular speed per ring seems okay
-    {
+    public static void AdjustAngularSpeed() 
+    { // it can be good to decrease angular speed decrement of the maze to polish gameplay
         _angularSpeed = _angularSpeed * _currentPathRadius / (_currentPathRadius + RADIUS_RING_DIFFERENCE);
         _currentPathRadius += RADIUS_RING_DIFFERENCE;
     }
