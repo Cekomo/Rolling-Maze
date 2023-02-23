@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // in this form, finger must be up after swipe operation for ball to move
@@ -18,7 +19,7 @@ public class PlayerTouchController : MonoBehaviour
         if (SwipeDirection == SwipeDirection.Lock)
         {
             if (Input.touches[0].phase == TouchPhase.Ended)
-                SwipeDirection = SwipeDirection.None;
+                StartCoroutine(EnableSwipeOperations());
             
             return;
         }
@@ -66,5 +67,11 @@ public class PlayerTouchController : MonoBehaviour
             default:
                 return SwipeDirection.None;
         }
+    }
+
+    private static IEnumerator EnableSwipeOperations()
+    {
+        yield return new WaitForSeconds(1f); // handle waiting time during polishing
+        SwipeDirection = SwipeDirection.None;
     }
 }
