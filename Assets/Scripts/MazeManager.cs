@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class MazeManager : MonoBehaviour
@@ -9,7 +8,8 @@ public class MazeManager : MonoBehaviour
     public static GameObject CurrentMaze;
     
     private void Awake()
-    { // PlayerPrefs.SetInt("LevelIndex", 0);
+    {  
+        // PlayerPrefs.SetInt("LevelIndex", 5);
         LevelLoader.PauseGame(true);
         InstantiateNewMaze();
         AddColliderToChildren();

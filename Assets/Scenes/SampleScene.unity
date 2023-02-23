@@ -1454,9 +1454,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeModelList:
+  - {fileID: 919132149155446097, guid: 4d2692a7fe8504abc858f0a7bbf01f16, type: 3}
   - {fileID: 919132149155446097, guid: b80432fc3726b47d8b4e7b88131b86cf, type: 3}
   - {fileID: 919132149155446097, guid: 12878f342d41045f0b35cd79168dad95, type: 3}
   - {fileID: 919132149155446097, guid: d04045d7b992f44afab3f37e75776ac5, type: 3}
+  - {fileID: 919132149155446097, guid: 4607a888c0e764d479a486cd5baec7b3, type: 3}
+  - {fileID: 919132149155446097, guid: 7b6a8818231e343a29dd73eab67c2d95, type: 3}
+  - {fileID: 919132149155446097, guid: cf9cce9215f3d408c90580c8692352ed, type: 3}
 --- !u!4 &1915962332
 Transform:
   m_ObjectHideFlags: 0
