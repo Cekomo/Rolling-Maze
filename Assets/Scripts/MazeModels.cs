@@ -10,7 +10,7 @@ public class MazeModels : MonoBehaviour
     public static int[] MazeScaleList;
     
     private void Awake()
-    { // PlayerPrefs.SetInt("LevelIndex", 0);
+    { // PlayerPrefs.SetInt("LevelIndex", 1);
         MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
@@ -21,6 +21,6 @@ public class MazeModels : MonoBehaviour
                 MazeScaleList[i] = SMALLEST_SCALE;
         
         var theMazeScale = MazeScaleList[LevelLoader.GetLevel()];
-        CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * -4);
+        CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * -4f);
     }
 }

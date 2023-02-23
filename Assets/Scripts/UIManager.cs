@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject startPanelGuide;
+    [SerializeField] private GameObject startPanelDefault;
     [SerializeField] private TMP_Text levelCount;
 
     private void Start()
@@ -24,8 +25,10 @@ public class UIManager : MonoBehaviour
 
     public void SetStartPanelStatus(bool isActive)
     {
-        startPanel.SetActive(isActive);
-        // Debug.Log("Setting start panel status to: " + isActive);
+        if (LevelLoader.GetLevel() != 0) 
+            startPanelDefault.SetActive(isActive);
+        else 
+            startPanelGuide.SetActive(isActive);
     }
 
     public void SetLevelCounter()

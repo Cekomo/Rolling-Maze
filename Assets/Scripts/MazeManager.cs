@@ -9,7 +9,7 @@ public class MazeManager : MonoBehaviour
     
     private void Awake()
     {  
-        // PlayerPrefs.SetInt("LevelIndex", 5);
+        // PlayerPrefs.SetInt("LevelIndex", 1);
         LevelLoader.PauseGame(true);
         InstantiateNewMaze();
         AddColliderToChildren();
