@@ -4,11 +4,6 @@ public static class LevelLoader
 {
     public static bool IsPaused;
 
-    public static void LoadLevel()
-    {
-        // some UI manipulations can be made here
-    }
-
     public static int GetLevel()
     {
         return PlayerPrefs.GetInt("LevelIndex");

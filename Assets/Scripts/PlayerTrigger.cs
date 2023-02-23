@@ -32,6 +32,9 @@
             uIManager.SetLevelCounter();
             uIManager.SetStartPanelStatus(true);
             
+            var theMazeScale = MazeModels.MazeScaleList[LevelLoader.GetLevel()];
+            CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
+            
             mazeManager.InstantiateNewMaze();
             MazeManager.PrepareTheMaze();
         }
