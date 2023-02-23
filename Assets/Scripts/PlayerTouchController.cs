@@ -7,8 +7,6 @@ public class PlayerTouchController : MonoBehaviour
     private Vector2 _fingerDownPosition;
     private Vector2 _fingerUpPosition;
     
-    
-    
     // handle the constant below, pixel ratio varies from phone to phone
     private const int MIN_SWIPE_DISTANCE = 30;
 
@@ -17,8 +15,14 @@ public class PlayerTouchController : MonoBehaviour
     private void Update()
     {
         if (Input.touchCount == 0) return;
-        if (LevelLoader.IsPaused) LevelLoader.PauseGame(false);
-
+        if (SwipeDirection == SwipeDirection.Lock)
+        {
+            if (Input.touches[0].phase == TouchPhase.Ended)
+                SwipeDirection = SwipeDirection.None;
+            
+            return;
+        }
+       
         foreach (var touch in Input.touches)
         {
             switch (touch.phase)

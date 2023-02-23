@@ -3,8 +3,7 @@ using UnityEngine;
 public static class LevelLoader
 {
     public static bool IsPaused;
-    
-    
+
     public static void LoadLevel()
     {
         // some UI manipulations can be made here
@@ -28,7 +27,14 @@ public static class LevelLoader
 
     public static void PauseGame(bool isPaused)
     {
-        Time.timeScale = isPaused ? 0 : 1;
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            PlayerTouchController.SwipeDirection = SwipeDirection.Lock;
+        }
+        else
+            Time.timeScale = 1;
+      
         IsPaused = isPaused;
     }
 }

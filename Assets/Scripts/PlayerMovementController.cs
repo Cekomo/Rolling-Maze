@@ -17,14 +17,15 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
 
     private void Update()
     {
-        if (MazeMovementController.PreventRotation) return;
+        if (MazeMovementController.PreventRotation || PlayerTouchController.SwipeDirection == SwipeDirection.Lock)
+            return;
         
         RotateInPlace();
     }
 
     private void FixedUpdate()
     {
-        if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
+        if (PlayerTouchController.SwipeDirection is SwipeDirection.None or SwipeDirection.Lock) return;
 
         switch (PlayerTouchController.SwipeDirection)
         {

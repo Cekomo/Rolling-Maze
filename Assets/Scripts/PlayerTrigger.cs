@@ -25,7 +25,7 @@
             
             LevelLoader.SaveLevel();
             
-            // MazeMovementController.ResetRotationBehavior();
+            MazeMovementController.ResetRotationBehavior();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
             
             LevelLoader.PauseGame(true);
