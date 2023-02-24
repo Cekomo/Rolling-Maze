@@ -71,7 +71,7 @@ public class PlayerTouchController : MonoBehaviour
 
     private static IEnumerator EnableSwipeOperations()
     {
-        yield return new WaitForSeconds(1f); // handle waiting time during polishing
+        yield return new WaitForSeconds(0.4f); // handle waiting time during polishing
         SwipeDirection = SwipeDirection.None;
     }
 }

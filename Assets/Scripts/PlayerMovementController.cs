@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
+    private const int ARTIFICIAL_GRAVITY = 10;
     private const float TORQUE = 197; // make this accurate
     private const float ROLLING_TIME = 1f;
     private const float ROLLING_SPEED = 180f;
@@ -24,6 +25,9 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
 
     private void FixedUpdate()
     {
+        if (PlayerTouchController.SwipeDirection is SwipeDirection.Lock && !LevelLoader.IsPaused) 
+            _rbBall.velocity = Vector3.down * ARTIFICIAL_GRAVITY;
+        
         if (PlayerTouchController.SwipeDirection is SwipeDirection.None or SwipeDirection.Lock) return;
 
         switch (PlayerTouchController.SwipeDirection)
