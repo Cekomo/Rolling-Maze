@@ -17,8 +17,7 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
 
     private void Update()
     {
-        if (MazeMovementController.PreventRotation || PlayerTouchController.SwipeDirection == SwipeDirection.Lock)
-            return;
+        if (MazeMovementController.PreventRotation) return;
         
         RotateInPlace();
     }
@@ -61,7 +60,8 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
         AddTorque();
         MazeMovementController.PreventRotation = true;
         yield return new WaitForSeconds(ROLLING_TIME);
-        
+
+        if (PlayerTouchController.SwipeDirection == SwipeDirection.Lock) yield break;
         RevertTorque();
         MazeMovementController.PreventRotation = false;
     }

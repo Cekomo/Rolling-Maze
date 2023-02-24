@@ -13,7 +13,7 @@ public class MazeMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (PreventRotation || PlayerTouchController.SwipeDirection == SwipeDirection.Lock) return;
+        if (PreventRotation) return;
         
         transform.Rotate(0f, GetRotationDirection() * _angularSpeed * Time.deltaTime, 0f);
     }

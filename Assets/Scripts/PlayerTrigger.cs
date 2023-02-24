@@ -1,3 +1,4 @@
+    using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
@@ -37,5 +38,12 @@
             
             mazeManager.InstantiateNewMaze();
             MazeManager.PrepareTheMaze();
+        }
+
+        private void OnCollisionExit(Collision col)
+        {
+            if (!col.gameObject.CompareTag("Floor")) return;
+
+            PlayerTouchController.SwipeDirection = SwipeDirection.Lock;
         }
     }
