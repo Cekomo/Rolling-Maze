@@ -5,12 +5,16 @@ public class PlayerTrigger : MonoBehaviour
 {
     public MazeManager mazeManager;
     public UIManager uIManager;
+    public AudioManager audioManager;
 
     private void OnCollisionEnter(Collision col)
     {
-        if (!col.gameObject.CompareTag("Wall")) return;
+        if (col.gameObject.CompareTag("Floor")) 
+            audioManager.Play(AudioType.BallFloorHit);
         
-        print("Game Over! Level retried.");
+        if (!col.gameObject.CompareTag("Wall")) return;
+
+        audioManager.Play(AudioType.BallWallHit);
         
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
