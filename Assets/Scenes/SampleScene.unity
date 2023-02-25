@@ -1655,10 +1655,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSamples:
-  - name: RollingAudio
+  - type: 0
     clip: {fileID: 8300000, guid: b3010dffb808a431bb6828ea2f13f1c0, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.5
+    pitch: 0.4
     isLooping: 1
     source: {fileID: 0}
 --- !u!1 &1923163297

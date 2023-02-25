@@ -10,7 +10,6 @@ public class AudioManager : MonoBehaviour
     {
         foreach (var audioSample in audioSamples)
         {
-            // var audioSource = audioSample.source;
             audioSample.source = gameObject.AddComponent<AudioSource>();
             
             audioSample.source.clip = audioSample.clip;
@@ -22,15 +21,17 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (LevelLoader.IsPaused || PlayerTouchController.SwipeDirection is SwipeDirection.Lock) return;
-    
-        Play("RollingAudio");
+        if (PlayerTouchController.SwipeDirection != SwipeDirection.Up) return;
+        
+        Play(AudioType.BallRolling);
     }
     
-    private void Play(string audioName)
+    private void Play(AudioType audioType)
     {
-        var theAudio = Array.Find(audioSamples, audioSample => audioSample.name == audioName);
-        if (!theAudio.source.isPlaying) 
-            theAudio.source.Play();
+        var theAudio = Array.Find(audioSamples, audioSample => audioSample.type == audioType);
+
+        if (theAudio == null) return;
+        theAudio.source.Stop();
+        theAudio.source.Play();
     }
 }
