@@ -465,7 +465,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 563661978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808a254286311406580f3ab5009c6c2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 49ad410f226fb4d20a8e0ca937d24438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mazeManager: {fileID: 1915962333}

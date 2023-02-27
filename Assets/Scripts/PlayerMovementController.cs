@@ -1,10 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using Maze;
 
-namespace Player
-{
-    public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
+public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
     private const int ARTIFICIAL_GRAVITY = 10;
     private const float TORQUE = 197; // make this accurate // was 300
@@ -79,5 +76,4 @@ namespace Player
             MazeMovementController.GetRotationDirection() * ROLLING_SPEED * Time.deltaTime, 
             Space.World);
     }
-}
 }
