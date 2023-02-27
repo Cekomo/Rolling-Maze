@@ -9,7 +9,7 @@
         
         private void Awake()
         {  
-            PlayerPrefs.SetInt("LevelIndex", 0);
+            // PlayerPrefs.SetInt("LevelIndex", 3);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             AddColliderToChildren();
@@ -20,7 +20,10 @@
         {
             if (CurrentMaze != null) Destroy(CurrentMaze);
             CurrentMaze = Instantiate(mazeModels.mazeModelList[LevelLoader.GetLevel()], mazeContainer);
+            
+            CurrentMaze.transform.position = new Vector3(0, -4, 0);
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
+            // CurrentMaze.transform.Rotate(0, 180, 0);
         }
 
         public static void PrepareTheMaze()

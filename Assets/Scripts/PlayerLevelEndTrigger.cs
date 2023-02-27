@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerTrigger : MonoBehaviour
+public class PlayerLevelEndTrigger : MonoBehaviour
 {
     public MazeManager mazeManager;
     public UIManager uIManager;
@@ -40,7 +40,7 @@ public class PlayerTrigger : MonoBehaviour
         CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
         
         mazeManager.InstantiateNewMaze();
-        MazeManager.PrepareTheMaze();
+        // MazeManager.PrepareTheMaze();
     }
 
     private void OnCollisionExit(Collision col)

@@ -465,7 +465,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 563661978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ad410f226fb4d20a8e0ca937d24438, type: 3}
+  m_Script: {fileID: 11500000, guid: 4890761cb5eef4964835d9ec17b77a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mazeManager: {fileID: 1915962333}
@@ -1592,13 +1592,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeModelList:
-  - {fileID: 919132149155446097, guid: 4d2692a7fe8504abc858f0a7bbf01f16, type: 3}
-  - {fileID: 919132149155446097, guid: 12878f342d41045f0b35cd79168dad95, type: 3}
-  - {fileID: 919132149155446097, guid: b80432fc3726b47d8b4e7b88131b86cf, type: 3}
-  - {fileID: 919132149155446097, guid: d04045d7b992f44afab3f37e75776ac5, type: 3}
-  - {fileID: 919132149155446097, guid: 4607a888c0e764d479a486cd5baec7b3, type: 3}
-  - {fileID: 919132149155446097, guid: 7b6a8818231e343a29dd73eab67c2d95, type: 3}
-  - {fileID: 919132149155446097, guid: cf9cce9215f3d408c90580c8692352ed, type: 3}
+  - {fileID: 5603450697006149433, guid: e427266699eb84d388f1b4ba53588dbf, type: 3}
+  - {fileID: 7968988308828061807, guid: 23eec09f40e7549d1b238bb0d4727925, type: 3}
+  - {fileID: 4022649093990722876, guid: 4a43c3f3253de4797963b45e7d1c30f9, type: 3}
+  - {fileID: 4743669325150589139, guid: e02c46e0c36ee43d486697bcc861ad99, type: 3}
+  - {fileID: 7824026291785658372, guid: 25ddeb1eac2fd48d28421b188a4390b3, type: 3}
+  - {fileID: 3326827153210393078, guid: f15a13141478a4d4292da3490b623145, type: 3}
+  - {fileID: 1406201786525502427, guid: 532c497152e4b4858bc4bc2135f0e02b, type: 3}
 --- !u!4 &1915962332
 Transform:
   m_ObjectHideFlags: 0
