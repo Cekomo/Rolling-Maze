@@ -14,8 +14,6 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         if (!col.gameObject.CompareTag("Wall")) return;
 
-        audioManager.Play(AudioType.BallWallHit);
-        
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         
@@ -38,7 +36,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         var theMazeScale = MazeModels.MazeScaleList[LevelLoader.GetLevel()];
         CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
-        
+
         mazeManager.InstantiateNewMaze();
         // MazeManager.PrepareTheMaze();
     }

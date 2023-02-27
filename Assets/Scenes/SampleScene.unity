@@ -1568,10 +1568,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915962332}
+  - component: {fileID: 1915962335}
   - component: {fileID: 1915962331}
   - component: {fileID: 1915962333}
   - component: {fileID: 1915962334}
-  - component: {fileID: 1915962335}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1659,19 +1659,19 @@ MonoBehaviour:
   - type: 0
     clip: {fileID: 8300000, guid: b3010dffb808a431bb6828ea2f13f1c0, type: 3}
     volume: 0.4
-    pitch: 0.4
+    pitch: 0.5
     isLooping: 1
     source: {fileID: 0}
   - type: 1
-    clip: {fileID: 8300000, guid: 55fb65d868c614a97aea3db757b04b02, type: 3}
-    volume: 0.8
-    pitch: 2
+    clip: {fileID: 8300000, guid: 1f522fd9cadc64fc6b13ef2eaecbde1a, type: 3}
+    volume: 0.5
+    pitch: 0.8
     isLooping: 0
     source: {fileID: 0}
   - type: 2
-    clip: {fileID: 8300000, guid: 1271899d20fc9416b80497ac245b3253, type: 3}
-    volume: 0.8
-    pitch: 2
+    clip: {fileID: 8300000, guid: 6dc4ced36bf094948b40c9a9564f9d38, type: 3}
+    volume: 0.1
+    pitch: 1.5
     isLooping: 0
     source: {fileID: 0}
 --- !u!1 &1923163297

@@ -2,6 +2,6 @@ public enum AudioType
 {
     BallRolling,
     BallFloorHit,
-    BallWallHit,
+    StartLevel,
     GameMusic
 }
