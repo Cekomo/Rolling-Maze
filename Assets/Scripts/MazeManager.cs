@@ -9,11 +9,11 @@
         
         private void Awake()
         {  
-            // PlayerPrefs.SetInt("LevelIndex", 3);
+            PlayerPrefs.SetInt("LevelIndex", 0);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
-            AddColliderToChildren();
-            TagChildren();
+            // AddColliderToChildren();
+            // TagChildren();
         }
 
         public void InstantiateNewMaze()
@@ -23,7 +23,7 @@
             
             CurrentMaze.transform.position = new Vector3(0, -4, 0);
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
-            // CurrentMaze.transform.Rotate(0, 180, 0);
+            CurrentMaze.transform.Rotate(0, 90, 0); // this is due to blender orientation   
         }
 
         public static void PrepareTheMaze()
