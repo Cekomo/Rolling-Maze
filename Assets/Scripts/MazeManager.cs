@@ -9,11 +9,9 @@
         
         private void Awake()
         {  
-            PlayerPrefs.SetInt("LevelIndex", 0);
+            // PlayerPrefs.SetInt("LevelIndex", 0);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
-            // AddColliderToChildren();
-            // TagChildren();
         }
 
         public void InstantiateNewMaze()
@@ -23,9 +21,9 @@
             
             CurrentMaze.transform.position = new Vector3(0, -4, 0);
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
-            CurrentMaze.transform.Rotate(0, 90, 0); // this is due to blender orientation   
         }
 
+        // not used since mobile does not detect collision in run-time collision addition
         public static void PrepareTheMaze()
         {
             AddColliderToChildren();
