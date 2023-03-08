@@ -12,6 +12,7 @@
             // PlayerPrefs.SetInt("LevelIndex", 0);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
+            DecideMazeColor();
         }
 
         public void InstantiateNewMaze()
@@ -30,25 +31,32 @@
             switch (currentLevel)
             {
                 case 0:
-                    PaintTheMaze(Colors.Orange , Colors.Blue);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.DarkGray], MazeModels.ColorDict[Colors.Gray]);
+                    // PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Blue]);
                     break;
                 case <= 5 and > 0:
-                    PaintTheMaze(Colors.Green , Colors.Pink );
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
                     break;
                 case <= 10 and > 5:
-                    PaintTheMaze(Colors.Yellow , Colors.Purple );
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
                     break;
                 case <= 15 and > 10:
-                    PaintTheMaze(Colors.DarkGray , Colors.LightBlue );
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Maroon], MazeModels.ColorDict[Colors.Peach]);
                     break;
                 case <= 20 and > 15:
-                    PaintTheMaze(Colors.Gray, Colors.DarkGray);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy] );
                     break;
             }
         }
 
-        private static void PaintTheMaze(Colors floorColor, Colors wallColor)
+        private static void PaintTheMaze(Color floorColor, Color wallColor)
         {
+            var mazeTransform = CurrentMaze.transform;
+
+            mazeTransform.GetChild(0).GetComponent<Renderer>().material.color = floorColor;
+
+            mazeTransform.GetChild(1).GetComponent<Renderer>().material.color = wallColor;
+            mazeTransform.GetChild(2).GetComponent<Renderer>().material.color = wallColor;
             
         }
 

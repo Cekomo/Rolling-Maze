@@ -9,21 +9,36 @@ public class MazeModels : MonoBehaviour
     public List<GameObject> mazeModelList;
     public static int[] MazeScaleList;
 
-    public static Dictionary<Colors, int> MazeColorList;
+    public static Dictionary<Colors, Color> ColorDict;
 
     private void Awake()
      { 
-        PlayerPrefs.SetInt("LevelIndex", 18);
+        PlayerPrefs.SetInt("LevelIndex", 8);
         MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
-        MazeColorList = new Dictionary<Colors, int> // () ?
+        ColorDict = new Dictionary<Colors, Color>() // possible to use it inside another class
         {
-            { Colors.Red, 0xFF0000 }, { Colors.Green, 0x00FF00 }, { Colors.Blue, 0x0000FF }, 
-            { Colors.Yellow, 0xFFFF00 }, { Colors.Orange, 0xFFA500 }, { Colors.Magenta, 0xFF00FF }, 
-            { Colors.Pink, 0xFFC0CB }, { Colors.Purple, 0x800080 }, { Colors.Cyan, 0x00FFFF }, 
-            { Colors.Gray, 0x808080 }, { Colors.LightBlue, 0xADD8E6 }, { Colors.LightYellow, 0xFFFFE0 }, 
-            { Colors.DarkGray, 0xA9A9A9 }, { Colors.DarkGreen, 0x006400 } 
+            { Colors.Red, new Color(1f, 0f, 0f, 1f) },
+            { Colors.Green, new Color(0f, 1f, 0f, 1f) },
+            { Colors.Blue, new Color(0f, 0f, 1f, 1f) },
+            { Colors.Yellow, new Color(1f, 1f, 0f, 1f) },
+            { Colors.Orange, new Color(1f, 0.85f, 0.7f, 1f) },
+            { Colors.Magenta, new Color(1f, 0f, 1f, 1f) },
+            { Colors.Pink, new Color(1f, 0.75f, 0.8f, 1f) },
+            { Colors.Purple, new Color(0.5f, 0f, 0.5f, 1f) },
+            { Colors.Cyan, new Color(0f, 1f, 1f, 1f) },
+            { Colors.Black, new Color(0.0f, 0.0f, 0.0f, 1.0f)},
+            { Colors.Gray, new Color(0.5f, 0.5f, 0.5f, 1f) },
+            { Colors.LightBlue, new Color(0.68f, 0.85f, 0.9f, 1f) },
+            { Colors.LightYellow, new Color(1f, 1f, 0.88f, 1f) },
+            { Colors.DarkGray, new Color(0.66f, 0.66f, 0.66f, 1f) },
+            { Colors.DarkGreen, new Color(0.13f, 0.37f, 0.31f, 1f) },
+            { Colors.Navy, new Color(0.0f, 0.0f, 0.5f, 1.0f)},
+            { Colors.Teal, new Color(0.0f, 0.5f, 0.5f, 1.0f)},
+            { Colors.Maroon, new Color(0.5f, 0.0f, 0.0f, 1.0f)},
+            { Colors.Peach, new Color(1.0f, 0.9f, 0.7f, 1.0f)},
+            { Colors.Mustard, new Color(1f, 0.86f, 0.35f, 1f)},
         };
 
         // levelCount+2 is seems good for initial camera distance

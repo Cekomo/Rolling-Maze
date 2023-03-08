@@ -1603,18 +1603,16 @@ MonoBehaviour:
   - {fileID: 7911755049175741982, guid: 0c97d991a33743f4b82786df9099d304, type: 3}
   - {fileID: 7760143934886442614, guid: 72e14c23dd34bba4c823f063a632e88c, type: 3}
   - {fileID: 6701821971031466432, guid: e1982967baccbdc459836036804077cb, type: 3}
-  - {fileID: 6694106275166577832, guid: 9ed3c44abdecc9943882939f3b7b8aed, type: 3}
+  - {fileID: 4702184214249091932, guid: 9ed3c44abdecc9943882939f3b7b8aed, type: 3}
   - {fileID: 8227473850323238992, guid: 01fcd43f63324904d8647458b81d74ca, type: 3}
   - {fileID: 2044812636536220530, guid: 65eca638b9c897b4ea6dd77247c5e372, type: 3}
   - {fileID: 6586650517108721193, guid: 123c975dc4a9ed446bdc2ca71ccc712c, type: 3}
   - {fileID: 3414676175821265095, guid: 73d8925dc04858340a1e8ebccaf9acea, type: 3}
   - {fileID: 8819374540657873783, guid: 4db19b1314b09754db4b26f3cc5b6bdf, type: 3}
-  - {fileID: 4336577000933732056, guid: 14f99628e8c4c2c48b3e5c3bdd8b95f0, type: 3}
+  - {fileID: 7344379202802773531, guid: 14f99628e8c4c2c48b3e5c3bdd8b95f0, type: 3}
   - {fileID: 3925033167048723520, guid: f972427a55397b04090578938f7f48a3, type: 3}
   - {fileID: 919132149155446097, guid: b919a0c33b91fbc4381ab164144c2d69, type: 3}
   - {fileID: 2814465683609701075, guid: e7a9643a602dc4e4aa7bef7f4374c819, type: 3}
-  mazeColorList:
-  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1915962332
 Transform:
   m_ObjectHideFlags: 0

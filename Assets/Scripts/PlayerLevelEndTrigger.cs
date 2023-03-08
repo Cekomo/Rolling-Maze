@@ -38,6 +38,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
 
         mazeManager.InstantiateNewMaze();
+        MazeManager.DecideMazeColor();
         // MazeManager.PrepareTheMaze();
     }
 
