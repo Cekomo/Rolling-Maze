@@ -1613,6 +1613,8 @@ MonoBehaviour:
   - {fileID: 3925033167048723520, guid: f972427a55397b04090578938f7f48a3, type: 3}
   - {fileID: 919132149155446097, guid: b919a0c33b91fbc4381ab164144c2d69, type: 3}
   - {fileID: 2814465683609701075, guid: e7a9643a602dc4e4aa7bef7f4374c819, type: 3}
+  mazeColorList:
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1915962332
 Transform:
   m_ObjectHideFlags: 0

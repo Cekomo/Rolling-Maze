@@ -8,7 +8,9 @@ public class MazeModels : MonoBehaviour
     public static int MaximumLevel;
     public List<GameObject> mazeModelList;
     public static int[] MazeScaleList;
-    
+
+    public List<Color> mazeColorList;
+
     private void Awake()
      { 
         PlayerPrefs.SetInt("LevelIndex", 18);

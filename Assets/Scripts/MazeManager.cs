@@ -22,6 +22,8 @@
             CurrentMaze.transform.position = new Vector3(0, -4, 0);
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
         }
+        
+        
 
         // not used since mobile does not detect collision in run-time collision addition
         public static void PrepareTheMaze()
