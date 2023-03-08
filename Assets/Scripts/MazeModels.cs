@@ -11,12 +11,12 @@ public class MazeModels : MonoBehaviour
     
     private void Awake()
      { 
-        // PlayerPrefs.SetInt("LevelIndex", 14);
+        PlayerPrefs.SetInt("LevelIndex", 18);
         MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
         // levelCount+2 is seems good for initial camera distance
-        MazeScaleList = new[] { 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8};
+        MazeScaleList = new[] { 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9};
         
         for (var i = 0; i < MazeScaleList.Length; i++)
             if (MazeScaleList[i] == 0)
