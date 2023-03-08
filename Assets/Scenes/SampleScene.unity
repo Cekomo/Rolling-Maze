@@ -1571,7 +1571,6 @@ GameObject:
   - component: {fileID: 1915962335}
   - component: {fileID: 1915962331}
   - component: {fileID: 1915962333}
-  - component: {fileID: 1915962336}
   - component: {fileID: 1915962334}
   m_Layer: 0
   m_Name: GameManager
@@ -1594,6 +1593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeModelList:
   - {fileID: 7258505485651214402, guid: 79336718f7fb3a345b98ccfef8321e8e, type: 3}
+  - {fileID: 4098485238327152587, guid: 8ef03a1d54b4aa544af7b7f0c56b2088, type: 3}
+  - {fileID: 5791834483739348242, guid: 7229092b71b050945a84281962d12d22, type: 3}
   - {fileID: 3039172070739009223, guid: fe1a481737b7cf44881ef2bb643a5e18, type: 3}
   - {fileID: 5348583662310567572, guid: bb791539b302bfd4192e9225ad32dd05, type: 3}
   - {fileID: 5810968559410893112, guid: 8fec3f28ca9fa3f4bac027f5c97185ec, type: 3}
@@ -1689,18 +1690,6 @@ MonoBehaviour:
     pitch: 1.5
     isLooping: 0
     source: {fileID: 0}
---- !u!114 &1915962336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915962330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247d2e062f32f4dcdae5c9281ef56234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1923163297
 GameObject:
   m_ObjectHideFlags: 0

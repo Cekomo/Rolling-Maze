@@ -42,8 +42,8 @@ public class MazeModels : MonoBehaviour
         };
 
         // levelCount+2 is seems good for initial camera distance
-        // MazeScaleList = new[] { 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9};
-        MazeScaleList = new[] { 5, 6, 7, 8, 9}; // MVP edition
+        MazeScaleList = new[] { 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9};
+        // MazeScaleList = new[] { 5, 6, 7, 8, 9}; // MVP edition
         
         for (var i = 0; i < MazeScaleList.Length; i++)
             if (MazeScaleList[i] == 0)
