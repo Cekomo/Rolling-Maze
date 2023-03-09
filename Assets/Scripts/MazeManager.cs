@@ -30,20 +30,20 @@
             
             switch (currentLevel)
             {
-                case < 3 and >= 0:
+                case < 5 and >= 0:
                     PaintTheMaze(MazeModels.ColorDict[Colors.DarkGray], MazeModels.ColorDict[Colors.Gray]);
                     // PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Blue]);
                     break;
-                case < 8 and >= 3:
+                case < 15 and >= 5:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
                     break;
-                case < 18 and >= 8:
+                case < 25 and >= 15:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
                     break;
-                case < 28 and >= 18:
+                case < 35 and >= 25:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Maroon], MazeModels.ColorDict[Colors.Peach]);
                     break;
-                case < 38 and >= 28:
+                case < 45 and >= 35:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy] );
                     break;
             }
