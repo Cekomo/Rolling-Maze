@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     private void Update() // transfer this if you create a class like gameManager 
     {
-        if (Input.touchCount == 0) return;
+        if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f) return;
         
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);

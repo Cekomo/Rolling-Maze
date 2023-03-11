@@ -18,12 +18,13 @@ public class PlayerTouchController : MonoBehaviour
         if (Input.touchCount == 0) return;
         if (SwipeDirection == SwipeDirection.Lock)
         {
-            if (Input.touches[0].phase == TouchPhase.Ended)
-                StartCoroutine(EnableSwipeOperations());
+            if (Input.touches[0].phase != TouchPhase.Ended ||
+                Input.touches[0].position.y > Screen.height * 0.8f) return;
+            StartCoroutine(EnableSwipeOperations());
             
             return;
         }
-       
+
         foreach (var touch in Input.touches)
         {
             switch (touch.phase)
