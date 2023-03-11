@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,19 +14,32 @@ public class UIManager : MonoBehaviour
     private Image unmuteImage;
     private Image muteImage;
 
+    private static bool isStoreActive;
+    [SerializeField] private Button storeButton;
+    private Image storeImage;
+    private Image crossImage;
+
+    private void Awake()
+    {
+        unmuteImage = audioButton.transform.GetChild(0).GetComponent<Image>();
+        muteImage = audioButton.transform.GetChild(1).GetComponent<Image>();
+        storeImage = storeButton.transform.GetChild(0).GetComponent<Image>();
+        crossImage = storeButton.transform.GetChild(1).GetComponent<Image>();
+        
+    }
+
     private void Start()
     {
         SetLevelCounter();
         SetStartPanelStatus(true);
-        
-        unmuteImage = audioButton.transform.GetChild(0).GetComponent<Image>();
-        muteImage = audioButton.transform.GetChild(1).GetComponent<Image>();
+        storeButton.gameObject.SetActive(true);
     }
 
     private void Update() // transfer this if you create a class like gameManager 
     {
         if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f) return;
         
+        storeButton.gameObject.SetActive(false);
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);
     }
@@ -50,5 +64,13 @@ public class UIManager : MonoBehaviour
 
         unmuteImage.gameObject.SetActive(!IsMuted);
         muteImage.gameObject.SetActive(IsMuted);
+    }
+
+    public void ToggleStore()
+    {
+        isStoreActive = !isStoreActive;
+        
+        storeImage.gameObject.SetActive(!isStoreActive);
+        crossImage.gameObject.SetActive(isStoreActive);
     }
 }
