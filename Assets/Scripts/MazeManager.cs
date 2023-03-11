@@ -8,8 +8,9 @@
         public static GameObject CurrentMaze;
         
         private void Awake()
-        {  
-             // PlayerPrefs.SetInt("LevelIndex", 1);
+        {
+            // if (PlayerPrefs.GetInt("LevelIndex") * 10 > 40) // MVP edition
+            // PlayerPrefs.SetInt("LevelIndex", 0);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
@@ -18,7 +19,7 @@
         public void InstantiateNewMaze()
         {
             if (CurrentMaze != null) Destroy(CurrentMaze);
-            CurrentMaze = Instantiate(mazeModels.mazeModelList[LevelLoader.GetLevel()], mazeContainer); // * 5 MVP
+            CurrentMaze = Instantiate(mazeModels.mazeModelList[LevelLoader.GetLevel()], mazeContainer); // * 10 MVP
             
             CurrentMaze.transform.position = new Vector3(0, -4, 0);
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
@@ -26,7 +27,7 @@
 
         public static void DecideMazeColor()
         {
-            var currentLevel = PlayerPrefs.GetInt("LevelIndex") % 20; // * 5 for MVP
+            var currentLevel = PlayerPrefs.GetInt("LevelIndex"); // * 5 for MVP
             
             switch (currentLevel)
             {
@@ -57,7 +58,6 @@
 
             mazeTransform.GetChild(1).GetComponent<Renderer>().material.color = wallColor;
             mazeTransform.GetChild(2).GetComponent<Renderer>().material.color = wallColor;
-            
         }
 
         // not used since mobile does not detect collision in run-time collision addition

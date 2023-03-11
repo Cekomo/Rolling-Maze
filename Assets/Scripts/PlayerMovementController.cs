@@ -4,16 +4,16 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
     private const int ARTIFICIAL_GRAVITY = 10;
-    private const float TORQUE = 220; // make this accurate // 194 for mobile
-    private const float ROLLING_TIME = 1f;
-    private const float ROLLING_SPEED = 180f;
+    private const float TORQUE = 419; // make this accurate // 545 for mobile
+    private const float ROLLING_TIME = 0.5f;
+    private const float ROLLING_SPEED = 300f;
 
     private static Rigidbody _rbBall;
 
     private void Start()
     {
         _rbBall = GetComponent<Rigidbody>();
-        _rbBall.maxAngularVelocity = 15.0f; // 20 
+        _rbBall.maxAngularVelocity = 45f; // 20 
     }
 
     private void Update()
