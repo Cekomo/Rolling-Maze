@@ -14,6 +14,9 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         if (!col.gameObject.CompareTag("Wall")) return;
 
+        if (PlayerPrefs.GetInt("PointMultiplier") > 0)
+            PlayerPrefs.SetInt("PointMultiplier", PlayerPrefs.GetInt("PointMultiplier") - 1);
+        
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         
@@ -27,6 +30,11 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         LevelLoader.SaveLevel();
         
+        SkinManager.GamePoint = PlayerPrefs.GetInt("GamePoint") + SkinManager.LevelPoint + 
+                                PlayerPrefs.GetInt("PointMultiplier") * SkinManager.LevelPoint / 3;
+        PlayerPrefs.SetInt("GamePoint", SkinManager.GamePoint);
+        PlayerPrefs.SetInt("PointMultiplier", SkinManager.SCORE_MULTIPLIER);
+        
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         
@@ -39,7 +47,8 @@ public class PlayerLevelEndTrigger : MonoBehaviour
 
         mazeManager.InstantiateNewMaze();
         MazeManager.DecideMazeColor();
-        // MazeManager.PrepareTheMaze();
+        
+        print(PlayerPrefs.GetInt("GamePoint"));
     }
 
     private void OnCollisionExit(Collision col)

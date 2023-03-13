@@ -33,19 +33,23 @@
             {
                 case < 5 and >= 0:
                     PaintTheMaze(MazeModels.ColorDict[Colors.DarkGray], MazeModels.ColorDict[Colors.Gray]);
-                    // PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Blue]);
+                    SkinManager.LevelPoint = 90;
                     break;
                 case < 15 and >= 5:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
+                    SkinManager.LevelPoint = 120;
                     break;
                 case < 25 and >= 15:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
+                    SkinManager.LevelPoint = 150;
                     break;
                 case < 35 and >= 25:
                     PaintTheMaze(MazeModels.ColorDict[Colors.Maroon], MazeModels.ColorDict[Colors.Peach]);
+                    SkinManager.LevelPoint = 180;
                     break;
                 case < 45 and >= 35:
-                    PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy] );
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy]);
+                    SkinManager.LevelPoint = 210;
                     break;
             }
         }
