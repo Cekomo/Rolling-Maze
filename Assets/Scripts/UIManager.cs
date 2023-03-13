@@ -13,9 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button audioButton;
     private Image unmuteImage;
     private Image muteImage;
-
-    private static bool isStoreActive;
+    
     [SerializeField] private Button storeButton;
+    [SerializeField] private GameObject storePanel;
     private Image storeImage;
     private Image crossImage;
 
@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
         muteImage = audioButton.transform.GetChild(1).GetComponent<Image>();
         storeImage = storeButton.transform.GetChild(0).GetComponent<Image>();
         crossImage = storeButton.transform.GetChild(1).GetComponent<Image>();
-        
     }
 
     private void Start()
@@ -37,7 +36,8 @@ public class UIManager : MonoBehaviour
 
     private void Update() // transfer this if you create a class like gameManager 
     {
-        if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f) return;
+        if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f || GameManager.IsStoreActive) 
+            return;
         
         storeButton.gameObject.SetActive(false);
         LevelLoader.PauseGame(false);
@@ -68,9 +68,10 @@ public class UIManager : MonoBehaviour
 
     public void ToggleStore()
     {
-        isStoreActive = !isStoreActive;
+        GameManager.IsStoreActive = !GameManager.IsStoreActive;
         
-        storeImage.gameObject.SetActive(!isStoreActive);
-        crossImage.gameObject.SetActive(isStoreActive);
+        storePanel.gameObject.SetActive(GameManager.IsStoreActive);
+        storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
+        crossImage.gameObject.SetActive(GameManager.IsStoreActive);
     }
 }
