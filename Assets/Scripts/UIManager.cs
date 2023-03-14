@@ -86,16 +86,24 @@ public class UIManager : MonoBehaviour
         totalGoldCount.text = "G: " + PlayerPrefs.GetInt("GamePoint");
     }
 
-    // public void SetCurrentGain()
-    // {
-    //     goldGain.gameObject.SetActive(true);
-    //     goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
-    // }
-    
     public IEnumerator SetCurrentGain()
     {
+        var goldGainTextTransparency = goldGain.color.a;
+        var goldGainColor = goldGain.color;
+        var goldGainPosition = goldGain.transform.position;
+        
         goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
-        yield return new WaitForSeconds(0.5f);
-        goldGain.text = "";
+        
+        yield return new WaitForSeconds(0.2f);
+        
+        while (goldGainTextTransparency > 0)
+        {
+            goldGainPosition.y += 2f;
+            goldGain.transform.position = goldGainPosition;
+            goldGainTextTransparency -= 0.05f;
+            goldGainColor.a = goldGainTextTransparency;
+            goldGain.color = goldGainColor;
+            yield return new WaitForSeconds(0.015f);
+        }
     }
 }
