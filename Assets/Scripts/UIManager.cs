@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startPanelGuide;
     [SerializeField] private GameObject startPanelDefault;
     [SerializeField] private TMP_Text levelCount;
+
+    [SerializeField] private TMP_Text goldCount;
     
     private static bool IsMuted;
     [SerializeField] private Button audioButton;
@@ -70,8 +72,15 @@ public class UIManager : MonoBehaviour
     {
         GameManager.IsStoreActive = !GameManager.IsStoreActive;
         
+        SetCurrentGold();
         storePanel.gameObject.SetActive(GameManager.IsStoreActive);
         storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
         crossImage.gameObject.SetActive(GameManager.IsStoreActive);
+        SetStartPanelStatus(!GameManager.IsStoreActive);
+    }
+
+    private void SetCurrentGold()
+    {
+        goldCount.text = "G: " + PlayerPrefs.GetInt("GamePoint");
     }
 }
