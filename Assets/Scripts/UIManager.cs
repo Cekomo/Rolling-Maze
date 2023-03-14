@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startPanelDefault;
     [SerializeField] private TMP_Text levelCount;
 
-    [SerializeField] private TMP_Text goldCount;
+    [SerializeField] private TMP_Text totalGoldCount;
+    [SerializeField] private TMP_Text goldGain;
     
     private static bool IsMuted;
     [SerializeField] private Button audioButton;
@@ -72,15 +74,28 @@ public class UIManager : MonoBehaviour
     {
         GameManager.IsStoreActive = !GameManager.IsStoreActive;
         
-        SetCurrentGold();
+        SetTotalGoldCounter();
         storePanel.gameObject.SetActive(GameManager.IsStoreActive);
         storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
         crossImage.gameObject.SetActive(GameManager.IsStoreActive);
         SetStartPanelStatus(!GameManager.IsStoreActive);
     }
 
-    private void SetCurrentGold()
+    private void SetTotalGoldCounter()
     {
-        goldCount.text = "G: " + PlayerPrefs.GetInt("GamePoint");
+        totalGoldCount.text = "G: " + PlayerPrefs.GetInt("GamePoint");
+    }
+
+    // public void SetCurrentGain()
+    // {
+    //     goldGain.gameObject.SetActive(true);
+    //     goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
+    // }
+    
+    public IEnumerator SetCurrentGain()
+    {
+        goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
+        yield return new WaitForSeconds(0.5f);
+        goldGain.text = "";
     }
 }

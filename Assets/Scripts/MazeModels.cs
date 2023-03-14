@@ -13,7 +13,7 @@ public class MazeModels : MonoBehaviour
 
     private void Awake()
      { 
-        // PlayerPrefs.SetInt("LevelIndex", 0);
+        // PlayerPrefs.SetInt("LevelIndex", 5);
         MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
