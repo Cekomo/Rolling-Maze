@@ -88,18 +88,18 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator SetCurrentGain()
     {
-        var goldGainTextTransparency = goldGain.color.a;
         var goldGainColor = goldGain.color;
+        var goldGainTextTransparency = goldGainColor.a;
         var goldGainPosition = goldGain.transform.position;
         
         goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
         
         yield return new WaitForSeconds(0.2f);
-        
         while (goldGainTextTransparency > 0)
         {
             goldGainPosition.y += 2f;
             goldGain.transform.position = goldGainPosition;
+            
             goldGainTextTransparency -= 0.05f;
             goldGainColor.a = goldGainTextTransparency;
             goldGain.color = goldGainColor;

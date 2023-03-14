@@ -294,6 +294,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &66102136 stripped
@@ -474,6 +502,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &102510069 stripped
@@ -644,6 +700,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &189938167 stripped
@@ -745,6 +829,34 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
@@ -1062,6 +1174,34 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
@@ -2595,6 +2735,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1041166883 stripped
@@ -3011,6 +3179,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1115968861 stripped
@@ -3346,6 +3542,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 363026738667528212, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3452,6 +3680,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1207559025 stripped
@@ -3553,6 +3809,34 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
@@ -3732,6 +4016,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 363026738667528212, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3837,6 +4153,38 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 363026738667528212, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_Sprite
@@ -4020,6 +4368,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1494879131 stripped
@@ -4121,6 +4497,34 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
@@ -4300,6 +4704,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1647708930 stripped
@@ -4402,6 +4834,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &1665022177 stripped
@@ -4503,6 +4963,34 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
@@ -5568,6 +6056,7 @@ GameObject:
   - component: {fileID: 1915962336}
   - component: {fileID: 1915962331}
   - component: {fileID: 1915962333}
+  - component: {fileID: 1915962337}
   - component: {fileID: 1915962334}
   m_Layer: 0
   m_Name: GameManager
@@ -5726,6 +6215,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247d2e062f32f4dcdae5c9281ef56234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1915962337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915962330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcdbdcdb9599864ea2929d28d7285d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 563661978}
+  currentBallSkin: {fileID: 0}
+  ballSkins:
+  - {fileID: 2100000, guid: 20803e3bf3b754868955ba401fb5480e, type: 2}
+  - {fileID: 2100000, guid: 8149affa5bbbe48429d416b5622d61a3, type: 2}
+  - {fileID: 2100000, guid: 7577629a1f344344d9636e5ffab36c7d, type: 2}
+  - {fileID: 2100000, guid: 85a1946bfb18cc446a3ec3680c2565c7, type: 2}
+  - {fileID: 2100000, guid: 2866dec04d6b0404e89970acb369d7f2, type: 2}
 --- !u!1 &1923163297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,6 +6411,38 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 363026738667528212, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_Sprite
@@ -6161,6 +6702,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
 --- !u!224 &2080688187 stripped
@@ -6262,6 +6831,46 @@ PrefabInstance:
     - target: {fileID: 363026738339687017, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915962337}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBallSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkinManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363026738339687018, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72427f8564d74049a9745318bf1a69a, type: 3}
