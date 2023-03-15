@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text goldCountText;
     [SerializeField] private TMP_Text goldGainText;
     [SerializeField] private TMP_Text skinCostText;
+
+    [SerializeField] private Image[] inventorySlotEdges;
+    private int previousSelectedSlot;
     
     private static bool IsMuted;
     [SerializeField] private Button audioButton;
@@ -26,6 +29,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        SetSlotColorAsSelected(PlayerPrefs.GetInt("CurrentSkinIndex"));
+        
         unmuteImage = audioButton.transform.GetChild(0).GetComponent<Image>();
         muteImage = audioButton.transform.GetChild(1).GetComponent<Image>();
         storeImage = storeButton.transform.GetChild(0).GetComponent<Image>();
@@ -75,12 +80,20 @@ public class UIManager : MonoBehaviour
         GameManager.IsStoreActive = !GameManager.IsStoreActive;
         
         SetGoldCounter();
+        SetSkinCost();
         storePanel.gameObject.SetActive(GameManager.IsStoreActive);
         storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
         crossImage.gameObject.SetActive(GameManager.IsStoreActive);
         SetStartPanelStatus(!GameManager.IsStoreActive);
     }
 
+    public void SetSlotColorAsSelected(int slotIndex)
+    {
+        inventorySlotEdges[previousSelectedSlot].color = MazeModels.ColorDict[Colors.Teal];
+        inventorySlotEdges[slotIndex].color = MazeModels.ColorDict[Colors.LightBlue];
+        previousSelectedSlot = slotIndex;
+    }
+    
     public void SetGoldCounter()
     {
         goldCountText.text = "G: " + PlayerPrefs.GetInt("GamePoint");

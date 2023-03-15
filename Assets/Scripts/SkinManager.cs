@@ -20,16 +20,16 @@ public class SkinManager : MonoBehaviour
 
     private void Awake()
     {
-        // if (PlayerPrefs.GetString("UnlockedSkins") == "")
-            // PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+        if (PlayerPrefs.GetString("UnlockedSkins") == "")
+            PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
         
         // print(PlayerPrefs.GetString("UnlockedSkins"));
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);
-        PlayerPrefs.SetInt("GamePoint", 15000);
+        // PlayerPrefs.SetInt("GamePoint", 15000);
         BallSkinCosts = new int[5];
         BallSkinCosts = new[] { 0, 200, 300, 400, 500 };
         
-        SetBallSkin();
+        SelectBallSkin(PlayerPrefs.GetInt("CurrentSkinIndex"));
     }
 
     private void SetBallSkin()

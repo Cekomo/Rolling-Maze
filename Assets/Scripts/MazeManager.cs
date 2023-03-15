@@ -9,14 +9,14 @@
         
         private void Awake()
         {
-            // if (PlayerPrefs.GetInt("LevelIndex") * 10 > 40) // MVP edition
-            // PlayerPrefs.SetInt("LevelIndex", 0);
+            if (PlayerPrefs.GetInt("LevelIndex") > 25) // GetInt("LevelIndex") * 10 > 40 MVP edition
+                PlayerPrefs.SetInt("LevelIndex", 10);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
         }
 
-        public void InstantiateNewMaze()
+        private void InstantiateNewMaze()
         {
             if (CurrentMaze != null) Destroy(CurrentMaze);
             CurrentMaze = Instantiate(mazeModels.mazeModelList[LevelLoader.GetLevel()], mazeContainer); // * 10 MVP
@@ -25,7 +25,7 @@
             CurrentMaze.transform.localScale = new Vector3(2, 2, 2);
         }
 
-        public static void DecideMazeColor()
+        private static void DecideMazeColor()
         {
             var currentLevel = PlayerPrefs.GetInt("LevelIndex"); // * 5 for MVP
             
