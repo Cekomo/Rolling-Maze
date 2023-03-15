@@ -2,26 +2,32 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
+    // ReSharper disable once InconsistentNaming
     public const int SCORE_MULTIPLIER = 3;
     public static int GamePoint;
     public static int LevelPoint;
-
+    
     [SerializeField] private GameObject ball;
-    private int _currentBallIndex;
     [HideInInspector] public Material currentBallSkin;
     [SerializeField] private Material[] ballSkins;
-    private int[] _ballSkinCosts;
-    // private bool[] _purchasedBallSkins;
+    
+    private int _currentBallIndex;
+    public static int[] BallSkinCosts;
+    
+    private string _unlockedSkinsArray;
+    public static int SelectedSkinValue;
+    public static int SelectedSkinIndex;
 
     private void Awake()
     {
         // if (PlayerPrefs.GetString("UnlockedSkins") == "")
             // PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
         
+        // print(PlayerPrefs.GetString("UnlockedSkins"));
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);
-        // PlayerPrefs.SetInt("GamePoint", 250);
-        _ballSkinCosts = new int[5];
-        _ballSkinCosts = new[] { 0, 200, 300, 400, 500 };
+        PlayerPrefs.SetInt("GamePoint", 15000);
+        BallSkinCosts = new int[5];
+        BallSkinCosts = new[] { 0, 200, 300, 400, 500 };
         
         SetBallSkin();
     }
@@ -33,44 +39,49 @@ public class SkinManager : MonoBehaviour
         ball.GetComponent<MeshRenderer>().material = currentBallSkin;
     }
 
-    public void ChangeOrBuySkin(int skinIndex)
+    public void SelectBallSkin(int skinIndex)
     {
-        var unlockedSkinsArray = PlayerPrefs.GetString("UnlockedSkins");
-        var selectedSkin = int.Parse(unlockedSkinsArray[skinIndex * 2].ToString());
+        _unlockedSkinsArray = PlayerPrefs.GetString("UnlockedSkins");
+        SelectedSkinValue = int.Parse(_unlockedSkinsArray[skinIndex * 2].ToString());
+        SelectedSkinIndex = skinIndex;
 
-        if (selectedSkin == 1)
-        {
-            ChangeBallSkin(skinIndex);
-        }
-        else 
-            UnlockBallSkin(skinIndex, unlockedSkinsArray);
+        if (SelectedSkinValue == 1)
+            ChangeBallSkin();
     }
 
-    private void ChangeBallSkin(int skinIndex)
+    private void ChangeBallSkin()
     {
-        PlayerPrefs.SetInt("CurrentSkinIndex", skinIndex);
+        PlayerPrefs.SetInt("CurrentSkinIndex", SelectedSkinIndex);
         SetBallSkin();
     }
-    
-    private void UnlockBallSkin(int skinIndex, string unlockedSkins)
-    {
-        if (PlayerPrefs.GetInt("GamePoint") < _ballSkinCosts[skinIndex]) return;
 
-        var newGamePoint = PlayerPrefs.GetInt("GamePoint") - _ballSkinCosts[skinIndex];
+    public void BuyBallSkin()
+    {
+        if (SelectedSkinValue == 1) return;
+        if (PlayerPrefs.GetInt("GamePoint") < BallSkinCosts[SelectedSkinIndex]) return;
+
+        var newGamePoint = PlayerPrefs.GetInt("GamePoint") - BallSkinCosts[SelectedSkinIndex];
         PlayerPrefs.SetInt("GamePoint", newGamePoint);
-        
+
+        UnlockBallSkin();
+        ChangeBallSkin();
+    }
+    
+    private void UnlockBallSkin()
+    {
         var newUnlockedSkins = "";
-        for (var i = 0; i < unlockedSkins.Length; i++)
+        for (var i = 0; i < _unlockedSkinsArray.Length; i++)
         {
-            if (i == skinIndex * 2)
+            if (i == SelectedSkinIndex * 2)
             {
                 newUnlockedSkins += "1,";
                 i++;
                 continue;
             }
-            newUnlockedSkins += unlockedSkins[i];
+            newUnlockedSkins += _unlockedSkinsArray[i];
         }
 
         PlayerPrefs.SetString("UnlockedSkins", newUnlockedSkins);
+        SelectedSkinValue = 1;
     }
 }

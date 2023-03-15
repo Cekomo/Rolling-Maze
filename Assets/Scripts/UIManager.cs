@@ -10,8 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startPanelDefault;
     [SerializeField] private TMP_Text levelCount;
 
-    [SerializeField] private TMP_Text totalGoldCount;
-    [SerializeField] private TMP_Text goldGain;
+    [SerializeField] private TMP_Text goldCountText;
+    [SerializeField] private TMP_Text goldGainText;
+    [SerializeField] private TMP_Text skinCostText;
     
     private static bool IsMuted;
     [SerializeField] private Button audioButton;
@@ -47,7 +48,11 @@ public class UIManager : MonoBehaviour
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);
     }
-
+    public void SetLevelCounter()
+    {
+        levelCount.text = "Level " + (LevelLoader.GetLevel() + 1);
+    }
+    
     public void SetStartPanelStatus(bool isActive)
     {
         if (LevelLoader.GetLevel() != 0) 
@@ -55,12 +60,7 @@ public class UIManager : MonoBehaviour
         else 
             startPanelGuide.SetActive(isActive);
     }
-
-    public void SetLevelCounter()
-    {
-        levelCount.text = "Level " + (LevelLoader.GetLevel() + 1);
-    }
-
+    
     public void ToggleMute()
     {
         IsMuted = !IsMuted;
@@ -74,35 +74,41 @@ public class UIManager : MonoBehaviour
     {
         GameManager.IsStoreActive = !GameManager.IsStoreActive;
         
-        SetTotalGoldCounter();
+        SetGoldCounter();
         storePanel.gameObject.SetActive(GameManager.IsStoreActive);
         storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
         crossImage.gameObject.SetActive(GameManager.IsStoreActive);
         SetStartPanelStatus(!GameManager.IsStoreActive);
     }
 
-    private void SetTotalGoldCounter()
+    public void SetGoldCounter()
     {
-        totalGoldCount.text = "G: " + PlayerPrefs.GetInt("GamePoint");
+        goldCountText.text = "G: " + PlayerPrefs.GetInt("GamePoint");
     }
 
+    public void SetSkinCost()
+    {
+        skinCostText.text = SkinManager.SelectedSkinValue == 1 ? 
+            "EQUIPPED" : SkinManager.BallSkinCosts[SkinManager.SelectedSkinIndex] + " G";
+    }
+    
     public IEnumerator SetCurrentGain()
     {
-        var goldGainColor = goldGain.color;
-        var goldGainTextTransparency = goldGainColor.a;
-        var goldGainPosition = goldGain.transform.position;
+        var goldGainTextColor = goldGainText.color;
+        var goldGainTextTransparency = goldGainTextColor.a;
+        var goldGainTextPosition = goldGainText.transform.position;
         
-        goldGain.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
+        goldGainText.text = "+" + SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) + " G";
         
         yield return new WaitForSeconds(0.2f);
         while (goldGainTextTransparency > 0)
         {
-            goldGainPosition.y += 2f;
-            goldGain.transform.position = goldGainPosition;
+            goldGainTextPosition.y += 2f;
+            goldGainText.transform.position = goldGainTextPosition;
             
             goldGainTextTransparency -= 0.05f;
-            goldGainColor.a = goldGainTextTransparency;
-            goldGain.color = goldGainColor;
+            goldGainTextColor.a = goldGainTextTransparency;
+            goldGainText.color = goldGainTextColor;
             yield return new WaitForSeconds(0.015f);
         }
     }
