@@ -15,13 +15,14 @@ public class SkinManager : MonoBehaviour
 
     private void Awake()
     {
+        // if (PlayerPrefs.GetString("UnlockedSkins") == "")
+            // PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+        
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);
         // PlayerPrefs.SetInt("GamePoint", 250);
         _ballSkinCosts = new int[5];
         _ballSkinCosts = new[] { 0, 200, 300, 400, 500 };
         
-        // var unlockedSkins = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
-        print(PlayerPrefs.GetString("UnlockedSkins"));
         SetBallSkin();
     }
 
@@ -32,20 +33,32 @@ public class SkinManager : MonoBehaviour
         ball.GetComponent<MeshRenderer>().material = currentBallSkin;
     }
 
-    public void ChangeBallSkin(int skinIndex)
+    public void ChangeOrBuySkin(int skinIndex)
     {
         var unlockedSkinsArray = PlayerPrefs.GetString("UnlockedSkins");
-        
-        if (unlockedSkinsArray[skinIndex * 2] == 1)
-            SetBallSkin();
+        var selectedSkin = int.Parse(unlockedSkinsArray[skinIndex * 2].ToString());
+
+        if (selectedSkin == 1)
+        {
+            ChangeBallSkin(skinIndex);
+        }
         else 
             UnlockBallSkin(skinIndex, unlockedSkinsArray);
     }
 
+    private void ChangeBallSkin(int skinIndex)
+    {
+        PlayerPrefs.SetInt("CurrentSkinIndex", skinIndex);
+        SetBallSkin();
+    }
+    
     private void UnlockBallSkin(int skinIndex, string unlockedSkins)
     {
-        if (GamePoint < _ballSkinCosts[skinIndex]) return;
-        GamePoint -= _ballSkinCosts[skinIndex];
+        if (PlayerPrefs.GetInt("GamePoint") < _ballSkinCosts[skinIndex]) return;
+
+        var newGamePoint = PlayerPrefs.GetInt("GamePoint") - _ballSkinCosts[skinIndex];
+        PlayerPrefs.SetInt("GamePoint", newGamePoint);
+        
         var newUnlockedSkins = "";
         for (var i = 0; i < unlockedSkins.Length; i++)
         {
@@ -57,7 +70,7 @@ public class SkinManager : MonoBehaviour
             }
             newUnlockedSkins += unlockedSkins[i];
         }
-        print("zort");
+
         PlayerPrefs.SetString("UnlockedSkins", newUnlockedSkins);
     }
 }
