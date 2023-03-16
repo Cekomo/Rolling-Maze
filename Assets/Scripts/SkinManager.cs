@@ -25,9 +25,11 @@ public class SkinManager : MonoBehaviour
         
         // print(PlayerPrefs.GetString("UnlockedSkins"));
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);
-        // PlayerPrefs.SetInt("GamePoint", 15000);
-        BallSkinCosts = new int[5];
-        BallSkinCosts = new[] { 0, 200, 300, 400, 500 };
+        if (PlayerPrefs.GetInt("GamePoint") < 2000)
+            PlayerPrefs.SetInt("GamePoint", 15000);
+        BallSkinCosts = new int[20];
+        BallSkinCosts = new[] { 0, 200, 300, 400, 500, 510, 500, 500, 510, 503, 
+            500, 520, 505, 500, 504, 500, 500, 509, 503, 502};
         
         SelectBallSkin(PlayerPrefs.GetInt("CurrentSkinIndex"));
     }
