@@ -1,22 +1,10 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerLevelEndTrigger : MonoBehaviour
 {
-    public MazeManager mazeManager;
     public UIManager uIManager;
     public AudioManager audioManager;
-
-    private static bool isLevelCompleted = false;
-
-    private void Start()
-    {
-        if (!isLevelCompleted) return;
-        isLevelCompleted = false;
-        StartCoroutine(uIManager.SetCurrentGain());
-    }
 
     private void OnCollisionEnter(Collision col)
     {
@@ -30,6 +18,8 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+
+        AdManager.ShowAdAfterLevelCompletion(); // maybe after start-panel initialization?
      
         LevelLoader.PauseGame(true);
         uIManager.SetStartPanelStatus(true);
@@ -47,16 +37,10 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         PlayerPrefs.SetInt("PointMultiplier", SkinManager.SCORE_MULTIPLIER);
 
         MazeMovementController.ResetRotationBehavior();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-
         LevelLoader.PauseGame(true);
-        uIManager.SetLevelCounter();
-        uIManager.SetStartPanelStatus(true);
-        
-        var theMazeScale = MazeModels.MazeScaleList[LevelLoader.GetLevel()];
-        CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
 
-        isLevelCompleted = true;
+        AdManager.ShowAdAfterLevelCompletion();
+        uIManager.SetLevelEndPanel();
     }
 
     private void OnCollisionExit(Collision col)
@@ -65,4 +49,6 @@ public class PlayerLevelEndTrigger : MonoBehaviour
 
         PlayerTouchController.SwipeDirection = SwipeDirection.Lock;
     }
+    
+    
 }

@@ -15,7 +15,7 @@ public class PlayerTouchController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount == 0 || GameManager.IsStoreActive) return;
+        if (Input.touchCount == 0 || GameManager.IsStoreActive || GameManager.IsEndPanelActive) return;
         
         if (SwipeDirection == SwipeDirection.Lock)
         {
