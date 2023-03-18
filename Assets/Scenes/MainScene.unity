@@ -7151,6 +7151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915962332}
+  - component: {fileID: 1915962338}
   - component: {fileID: 1915962335}
   - component: {fileID: 1915962336}
   - component: {fileID: 1915962331}
@@ -7371,6 +7372,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 11f2757490b4d304489e6bb456f46691, type: 2}
   - {fileID: 2100000, guid: c0b14be3dad00854689309f252faf571, type: 2}
   - {fileID: 2100000, guid: ac22ba62e0a29094f83f8dd1f46388a3, type: 2}
+--- !u!114 &1915962338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915962330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b001c956caa1043cd9cc27f3714273af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidId: 60000
 --- !u!1 &1923163297
 GameObject:
   m_ObjectHideFlags: 0
