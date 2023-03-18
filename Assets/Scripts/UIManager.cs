@@ -96,13 +96,13 @@ public class UIManager : MonoBehaviour
     
     public void SetGoldCounter()
     {
-        goldCountText.text = "G: " + PlayerPrefs.GetInt("GamePoint");
+        goldCountText.text = PlayerPrefs.GetInt("GamePoint").ToString();
     }
 
     public void SetSkinCost()
     {
         skinCostText.text = SkinManager.SelectedSkinValue == 1 ? 
-            "EQUIPPED" : SkinManager.BallSkinCosts[SkinManager.SelectedSkinIndex] + " G";
+            "EQUIPPED" : SkinManager.BallSkinCosts[SkinManager.SelectedSkinIndex].ToString();
     }
     
     public IEnumerator SetCurrentGain()
