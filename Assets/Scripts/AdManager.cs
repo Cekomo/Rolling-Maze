@@ -11,7 +11,6 @@ public class AdManager : MonoBehaviour
     public static void ShowAdAfterLevelCompletion()
     {
         AdShowingIndex++;
-        print(AdShowingIndex);
         if (AdShowingIndex < 3) return; // check this
         
         print("Show ad.");

@@ -1,3 +1,4 @@
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text levelCount;
 
     [SerializeField] private GameObject levelEndPanel;
+    [SerializeField] private TMP_Text levelTries;
 
     [SerializeField] private TMP_Text goldCountText;
     [SerializeField] private TMP_Text goldGainText;
@@ -100,16 +102,12 @@ public class UIManager : MonoBehaviour
         goldCountText.text = PlayerPrefs.GetInt("GamePoint").ToString();
     }
 
-    private void SetLevelGoldGain()
+    private void SetLevelGoldGainText()
     {
-        goldGainText.text = (SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3)).ToString();
+        var pointMultiplier = (float)PlayerPrefs.GetInt("PointMultiplier");
+        goldGainText.text = (SkinManager.LevelPoint * (1 + pointMultiplier / 2)).ToString(CultureInfo.InvariantCulture);
     }
-
-    private void SetLevelTries()
-    {
-        
-    }
-
+    
     public void SetSkinCost()
     {
         skinCostText.text = SkinManager.SelectedSkinValue == 1 ? 
@@ -121,8 +119,17 @@ public class UIManager : MonoBehaviour
         GameManager.IsEndPanelActive = true;
         levelEndPanel.gameObject.SetActive(true);
         
-        SetLevelGoldGain();
+        SetLevelGoldGainText();
         SetLevelTries();
+    }
+
+    private void SetLevelTries()
+    {
+        if (GameManager.LevelTries == 0) GameManager.LevelTries = 1;
+        levelTries.text = GameManager.LevelTries.ToString();
+        
+        GameManager.LevelTries = 1;
+        PlayerPrefs.SetInt("LevelTries", GameManager.LevelTries);
     }
 
     public void GoNextLevel()

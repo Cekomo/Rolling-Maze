@@ -15,6 +15,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
 
         if (PlayerPrefs.GetInt("PointMultiplier") > 0)
             PlayerPrefs.SetInt("PointMultiplier", PlayerPrefs.GetInt("PointMultiplier") - 1);
+        PlayerPrefs.SetInt("LevelTries", ++GameManager.LevelTries);
         
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
@@ -31,14 +32,15 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         LevelLoader.SaveLevel();
         
+        var pointMultiplier = (float)PlayerPrefs.GetInt("PointMultiplier");
         SkinManager.GamePoint = PlayerPrefs.GetInt("GamePoint") + 
-                                SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3);
+                                SkinManager.LevelPoint * (1 + (int)pointMultiplier / 2);
         PlayerPrefs.SetInt("GamePoint", SkinManager.GamePoint);
         PlayerPrefs.SetInt("PointMultiplier", SkinManager.SCORE_MULTIPLIER);
 
         MazeMovementController.ResetRotationBehavior();
         LevelLoader.PauseGame(true);
-
+        
         AdManager.ShowAdAfterLevelCompletion();
         uIManager.SetLevelEndPanel();
     }

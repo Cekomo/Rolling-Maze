@@ -1253,7 +1253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &285382723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9164,6 +9164,7 @@ MonoBehaviour:
   startPanelDefault: {fileID: 1923163297}
   levelCount: {fileID: 1910473996}
   levelEndPanel: {fileID: 285382722}
+  levelTries: {fileID: 1975397667}
   goldCountText: {fileID: 1904064296}
   goldGainText: {fileID: 254739850}
   skinCostText: {fileID: 408770053}

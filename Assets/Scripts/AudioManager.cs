@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.IsEndPanelActive) Stop(AudioType.BallRolling);
         if (PlayerTouchController.SwipeDirection != SwipeDirection.Up) return;
         
         Play(AudioType.BallRolling);
@@ -34,5 +35,11 @@ public class AudioManager : MonoBehaviour
         if (theAudio == null) return;
         theAudio.source.Stop();
         theAudio.source.Play();
+    }
+
+    private void Stop(AudioType audioType)
+    {
+        var theAudio = Array.Find(audioSamples, audioSample => audioSample.type == audioType);
+        theAudio.source.Stop();
     }
 }
