@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject levelEndPanel;
     [SerializeField] private TMP_Text levelTries;
+    [SerializeField] private GameObject goldMultiplier;
 
     [SerializeField] private TMP_Text goldCountText;
     [SerializeField] private TMP_Text goldGainText;
@@ -83,9 +84,11 @@ public class UIManager : MonoBehaviour
         
         SetGoldCounter();
         SetSkinCost();
+        
         storePanel.gameObject.SetActive(GameManager.IsStoreActive);
         _storeImage.gameObject.SetActive(!GameManager.IsStoreActive);
         _crossImage.gameObject.SetActive(GameManager.IsStoreActive);
+        
         SetStartPanelStatus(!GameManager.IsStoreActive);
     }
 
@@ -110,12 +113,21 @@ public class UIManager : MonoBehaviour
     public void SetLevelEndPanel()
     {
         GameManager.IsEndPanelActive = true;
+        
+        ToggleGoldMultiplier(true);
         levelEndPanel.gameObject.SetActive(true);
     }
 
     public void SetLevelTriesText()
     {
         levelTries.text = (PlayerPrefs.GetInt("LevelTries") + 1).ToString();
+    }
+
+    private void ToggleGoldMultiplier(bool isActive)
+    {
+        
+        // var goldMultiplierImage = goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier);
+        goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier).gameObject.SetActive(isActive);
     }
 
     public void SetLevelGainText()
@@ -126,6 +138,7 @@ public class UIManager : MonoBehaviour
     public void GoNextLevel()
     {
         GameManager.IsEndPanelActive = false;
+        ToggleGoldMultiplier(false);
         levelEndPanel.gameObject.SetActive(false);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
