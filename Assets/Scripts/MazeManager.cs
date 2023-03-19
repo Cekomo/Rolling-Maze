@@ -10,7 +10,7 @@
         private void Awake()
         {
             // if (PlayerPrefs.GetInt("LevelIndex") > 25) // GetInt("LevelIndex") * 10 > 40 MVP edition
-                PlayerPrefs.SetInt("LevelIndex", 10);
+                 // PlayerPrefs.SetInt("LevelIndex", 0);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
@@ -65,12 +65,7 @@
         }
 
         // not used since mobile does not detect collision in run-time collision addition
-        public static void PrepareTheMaze()
-        {
-            AddColliderToChildren();
-            TagChildren();
-        }
-        
+
         private static void AddColliderToChildren()
         {
             var meshFilters = CurrentMaze.GetComponentsInChildren<MeshFilter>();

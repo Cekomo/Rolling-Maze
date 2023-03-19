@@ -12,11 +12,8 @@ public class PlayerLevelEndTrigger : MonoBehaviour
             audioManager.Play(AudioType.BallFloorHit);
         
         if (!col.gameObject.CompareTag("Wall")) return;
-
-        if (PlayerPrefs.GetInt("PointMultiplier") > 0)
-            PlayerPrefs.SetInt("PointMultiplier", PlayerPrefs.GetInt("PointMultiplier") - 1);
-        PlayerPrefs.SetInt("LevelTries", ++GameManager.LevelTries);
         
+        PlayerPrefs.SetInt("LevelTries", PlayerPrefs.GetInt("LevelTries") + 1); // check if prefs get updated correctly
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 
@@ -30,15 +27,16 @@ public class PlayerLevelEndTrigger : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Finish")) return;
         
+        uIManager.SetLevelTriesText();
+        GameManager.SetLevelGoldGain();
+        uIManager.SetLevelGainText();
+        GameManager.SetTotalGold();
+        
         LevelLoader.SaveLevel();
         
-        var pointMultiplier = (float)PlayerPrefs.GetInt("PointMultiplier");
-        SkinManager.GamePoint = PlayerPrefs.GetInt("GamePoint") + 
-                                SkinManager.LevelPoint * (1 + (int)pointMultiplier / 2);
-        PlayerPrefs.SetInt("GamePoint", SkinManager.GamePoint);
-        PlayerPrefs.SetInt("PointMultiplier", SkinManager.SCORE_MULTIPLIER);
-
+        PlayerPrefs.SetInt("LevelTries", 0);
         MazeMovementController.ResetRotationBehavior();
+        
         LevelLoader.PauseGame(true);
         
         AdManager.ShowAdAfterLevelCompletion();

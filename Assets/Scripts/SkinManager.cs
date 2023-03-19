@@ -3,8 +3,6 @@ using UnityEngine;
 public class SkinManager : MonoBehaviour
 {
     // ReSharper disable once InconsistentNaming
-    public const int SCORE_MULTIPLIER = 3;
-    public static int GamePoint;
     public static int LevelPoint;
     
     [SerializeField] private GameObject ball;

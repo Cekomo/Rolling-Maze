@@ -1,4 +1,3 @@
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,7 +47,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void Update() // transfer this if you create a class like gameManager 
-    {
+    {   
         if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f || 
             GameManager.IsStoreActive || GameManager.IsEndPanelActive) return;
         
@@ -102,12 +101,6 @@ public class UIManager : MonoBehaviour
         goldCountText.text = PlayerPrefs.GetInt("GamePoint").ToString();
     }
 
-    private void SetLevelGoldGainText()
-    {
-        var pointMultiplier = (float)PlayerPrefs.GetInt("PointMultiplier");
-        goldGainText.text = (SkinManager.LevelPoint * (1 + pointMultiplier / 2)).ToString(CultureInfo.InvariantCulture);
-    }
-    
     public void SetSkinCost()
     {
         skinCostText.text = SkinManager.SelectedSkinValue == 1 ? 
@@ -118,26 +111,25 @@ public class UIManager : MonoBehaviour
     {
         GameManager.IsEndPanelActive = true;
         levelEndPanel.gameObject.SetActive(true);
-        
-        SetLevelGoldGainText();
-        SetLevelTries();
     }
 
-    private void SetLevelTries()
+    public void SetLevelTriesText()
     {
-        if (GameManager.LevelTries == 0) GameManager.LevelTries = 1;
-        levelTries.text = GameManager.LevelTries.ToString();
-        
-        GameManager.LevelTries = 1;
-        PlayerPrefs.SetInt("LevelTries", GameManager.LevelTries);
+        levelTries.text = (PlayerPrefs.GetInt("LevelTries") + 1).ToString();
     }
 
+    public void SetLevelGainText()
+    {
+        goldGainText.text = GameManager.GetLevelGoldGain().ToString();
+    }
+    
     public void GoNextLevel()
     {
         GameManager.IsEndPanelActive = false;
         levelEndPanel.gameObject.SetActive(false);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        
         SetLevelCounter();
         SetStartPanelStatus(true);
         
