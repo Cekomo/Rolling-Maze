@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -5,21 +6,19 @@ public class AdManager : MonoBehaviour
 {
     public static AdManager Instance;
 
-    public static int AdShowingIndex;
-    // [SerializeField] private AdInitializer adInitializer;
+    [SerializeField] private AdsInitializer adsInitializer;
+    [SerializeField] private InterstitialAds interstitialAds;
+    [SerializeField] private RewardedAds rewardedAds;
 
-    public static void ShowAdAfterLevelCompletion()
+    [SerializeField] private string gameId;
+    [SerializeField] private string interstitialPlacementId;
+    [SerializeField] private string rewardedPlacementId;
+    [SerializeField] private bool testMode;
+
+    private void Awake()
     {
-        AdShowingIndex++;
-        if (AdShowingIndex < 3) return; // check this
-        
-        print("Show ad.");
-        AdShowingIndex = 0;
+        adsInitializer.InitializeAds(gameId, testMode);
     }
     
-    public void WatchRewardedApp()
-    {
-        print("Rewarded ad initialized.");
-        // AdManager.Instance.
-    }
+    
 }

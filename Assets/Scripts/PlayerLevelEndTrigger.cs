@@ -17,7 +17,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 
-        AdManager.ShowAdAfterLevelCompletion(); // maybe after start-panel initialization?
+        // AdManager.ShowAdAfterLevelCompletion(); // maybe after start-panel initialization?
      
         LevelLoader.PauseGame(true);
         uIManager.SetStartPanelStatus(true);
@@ -39,7 +39,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         LevelLoader.PauseGame(true);
         
-        AdManager.ShowAdAfterLevelCompletion();
+        // AdManager.ShowAdAfterLevelCompletion();
         uIManager.SetLevelEndPanel();
     }
 
