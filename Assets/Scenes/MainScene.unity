@@ -1253,7 +1253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &285382723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3044,6 +3044,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1915962338}
         m_TargetAssemblyTypeName: AdManager, Assembly-CSharp
         m_MethodName: TryShowingRewardedAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1915962334}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5348,7 +5360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gain 4X
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9170,6 +9182,7 @@ MonoBehaviour:
   goldCountText: {fileID: 1904064296}
   goldGainText: {fileID: 254739850}
   skinCostText: {fileID: 408770053}
+  adGainText: {fileID: 1136123806}
   inventorySlotEdges:
   - {fileID: 411805424}
   - {fileID: 915882336}
@@ -9288,7 +9301,7 @@ MonoBehaviour:
   androidGameId: 5208857
   interstitialPlacementId: Interstitial_Android
   rewardedPlacementId: Rewarded_Android
-  inTestMode: 1
+  inTestMode: 0
 --- !u!1 &1923163297
 GameObject:
   m_ObjectHideFlags: 0

@@ -90,7 +90,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-
+            
             // Load another ad:
             Advertisement.Load(rewardedPlacementId, this);
         }

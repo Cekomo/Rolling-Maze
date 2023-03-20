@@ -14,8 +14,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject goldMultiplier;
 
     [SerializeField] private TMP_Text goldCountText;
-    [SerializeField] private TMP_Text goldGainText;
     [SerializeField] private TMP_Text skinCostText;
+    public TMP_Text goldGainText;
+    public TMP_Text adGainText;
 
     [SerializeField] private Image[] inventorySlotEdges;
     private int previousSelectedSlot;
@@ -114,6 +115,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.IsEndPanelActive = true;
         
+        SetLevelGainText(adGainText, 3);
         ToggleGoldMultiplier(true);
         levelEndPanel.gameObject.SetActive(true);
     }
@@ -125,16 +127,15 @@ public class UIManager : MonoBehaviour
 
     private void ToggleGoldMultiplier(bool isActive)
     {
-        
         // var goldMultiplierImage = goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier);
         goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier).gameObject.SetActive(isActive);
     }
 
-    public void SetLevelGainText()
+    public void SetLevelGainText(TMP_Text tmpText, int multiplier)
     {
-        goldGainText.text = GameManager.GetLevelGoldGain().ToString();
+        tmpText.text = "+" + GameManager.GetLevelGoldGain() * multiplier;
     }
-    
+
     public void GoNextLevel()
     {
         GameManager.IsEndPanelActive = false;
