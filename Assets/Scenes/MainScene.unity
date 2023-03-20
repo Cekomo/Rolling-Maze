@@ -2487,6 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uIManager: {fileID: 1915962334}
   audioManager: {fileID: 1915962335}
+  adManager: {fileID: 1915962338}
 --- !u!1001 &566287867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9283,10 +9284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b001c956caa1043cd9cc27f3714273af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5208857
+  androidGameId: 5208857
   interstitialPlacementId: Interstitial_Android
   rewardedPlacementId: Rewarded_Android
-  testMode: 1
+  inTestMode: 1
 --- !u!1 &1923163297
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
 {
     public UIManager uIManager;
     public AudioManager audioManager;
+    public AdManager adManager;
 
     private void OnCollisionEnter(Collision col)
     {
@@ -14,11 +15,12 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         if (!col.gameObject.CompareTag("Wall")) return;
         
         PlayerPrefs.SetInt("LevelTries", PlayerPrefs.GetInt("LevelTries") + 1); // check if prefs get updated correctly
+        
+        adManager.ShowAdInEvery3Attempt(); // its place can be wrong
+        
         MazeMovementController.ResetRotationBehavior();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-
-        // AdManager.ShowAdAfterLevelCompletion(); // maybe after start-panel initialization?
-     
+        
         LevelLoader.PauseGame(true);
         uIManager.SetStartPanelStatus(true);
     }
@@ -35,11 +37,12 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         LevelLoader.SaveLevel();
         
         PlayerPrefs.SetInt("LevelTries", 0);
+
         MazeMovementController.ResetRotationBehavior();
-        
         LevelLoader.PauseGame(true);
         
-        // AdManager.ShowAdAfterLevelCompletion();
+        adManager.ShowAdInEvery3Attempt(); // its place can be wrong
+        
         uIManager.SetLevelEndPanel();
     }
 

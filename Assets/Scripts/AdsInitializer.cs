@@ -3,6 +3,8 @@ using UnityEngine.Advertisements;
  
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
+    public static AdsInitializer Instance;
+    
     public void InitializeAds(string gameId, bool inTestMode)
     {
         Advertisement.Initialize(gameId, inTestMode, this);

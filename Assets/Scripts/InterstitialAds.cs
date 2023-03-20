@@ -3,10 +3,12 @@ using UnityEngine.Advertisements;
  
 public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+    public static InterstitialAds Instance;
+    
     [SerializeField] private string androidAdUnitId = "Interstitial_Android";
 
     // Load content to the Ad Unit:
-    public void LoadInterstitialAd()
+    public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
         Debug.Log("Loading Ad: " + androidAdUnitId);
@@ -14,7 +16,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     }
  
     // Show the loaded content in the Ad Unit:
-    public void ShowInterstitialAd()
+    public void ShowAd()
     {
         // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + androidAdUnitId);

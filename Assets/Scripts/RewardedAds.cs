@@ -4,6 +4,8 @@ using UnityEngine.Advertisements;
  
 public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+    public static RewardedAds Instance;
+    
     [SerializeField] private Button showAdButton;
     [SerializeField] private string androidAdUnitId = "Rewarded_Android";
 
@@ -14,7 +16,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
     }
  
     // Load content to the Ad Unit:
-    public void LoadRewardedAd()
+    public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
         Debug.Log("Loading Ad: " + androidAdUnitId);
@@ -29,14 +31,14 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         if (adUnitId.Equals(androidAdUnitId))
         {
             // Configure the button to call the ShowAd() method when clicked:
-            showAdButton.onClick.AddListener(ShowRewardedAd);
+            showAdButton.onClick.AddListener(ShowAd);
             // Enable the button for users to click:
             showAdButton.interactable = true;
         }
     }
  
     // Implement a method to execute when the user clicks the button:
-    public void ShowRewardedAd()
+    public void ShowAd()
     {
         // Disable the button:
         showAdButton.interactable = false;
