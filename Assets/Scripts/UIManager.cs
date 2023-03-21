@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text skinCostText;
     public TMP_Text goldGainText;
     public TMP_Text adGainText;
+    [SerializeField] private TMP_Text adGainFadingText;
+    
 
     [SerializeField] private Image[] inventorySlotEdges;
     private int previousSelectedSlot;
@@ -30,6 +33,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject storePanel;
     private Image _storeImage;
     private Image _crossImage;
+
+    public static bool IsBonusReadyToPop;
 
     private void Awake()
     {
@@ -46,6 +51,10 @@ public class UIManager : MonoBehaviour
         SetLevelCounter();
         SetStartPanelStatus(true);
         storeButton.gameObject.SetActive(true);
+   
+        if (!IsBonusReadyToPop) return;
+        IsBonusReadyToPop = false;
+        StartCoroutine(SetBonusGain());
     }
 
     private void Update() // transfer this if you create a class like gameManager 
@@ -150,4 +159,32 @@ public class UIManager : MonoBehaviour
         var theMazeScale = MazeModels.MazeScaleList[LevelLoader.GetLevel()];
         CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * 4);
     }
+
+    public void CloseEndPanel()
+    {
+        levelEndPanel.gameObject.SetActive(false);
+    }
+
+    public IEnumerator SetBonusGain()
+    {
+        var adGainFadingTextColor = adGainFadingText.color;
+        var adGainFadingTextTransparency = adGainFadingTextColor.a;
+        var adGainFadingTextPosition = adGainFadingText.transform.position;
+
+        var adBonus = SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) * 3;
+        adGainFadingText.text = "+" + adBonus + " G";
+        
+        yield return new WaitForSeconds(0.2f);
+        while (adGainFadingTextTransparency > 0)
+        {
+            adGainFadingTextPosition.y += 2f;
+            adGainFadingText.transform.position = adGainFadingTextPosition;
+            
+            adGainFadingTextTransparency -= 0.05f;
+            adGainFadingTextColor.a = adGainFadingTextTransparency;
+            adGainFadingText.color = adGainFadingTextColor;
+            yield return new WaitForSeconds(0.015f);
+        }
+    }
+
 }

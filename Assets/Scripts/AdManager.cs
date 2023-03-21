@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 { // class is initialized for android platform only
-    // [SerializeField] private 
+    [SerializeField] private UIManager uIManager;
+    
     [SerializeField] private Button showAdButton;
 
     public static int AdShowingCounter;
@@ -26,11 +27,11 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         Advertisement.Load(placementId, this);
     }
     
-    private void ShowAd(string placementId)
+    private void ShowInterstitialAd()
     {
         // Note that if the ad content wasn't previously loaded, this method will fail
-        Debug.Log("Showing Ad: " + placementId);
-        Advertisement.Show(placementId, this);
+        Debug.Log("Showing Ad: " + interstitialPlacementId);
+        Advertisement.Show(interstitialPlacementId, this);
     }
     
     private void ShowRewardedAd()
@@ -44,7 +45,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     private void TryShowingInterstitialAd()
     {
         LoadAd(interstitialPlacementId);
-        ShowAd(interstitialPlacementId);
+        ShowInterstitialAd();
     }
 
     public void ShowAdInEvery3Attempt()
@@ -80,20 +81,23 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
             showAdButton.onClick.AddListener(ShowRewardedAd);
             // Enable the button for users to click:
             showAdButton.interactable = true;
+            UIManager.IsBonusReadyToPop = true;
         }
     }
     
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
-        if (adUnitId.Equals(rewardedPlacementId) && 
-            showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
-        {
-            Debug.Log("Unity Ads Rewarded Ad Completed");
-            // Grant a reward.
-            
-            // Load another ad:
-            Advertisement.Load(rewardedPlacementId, this);
-        }
+        if (!showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED) 
+            || !adUnitId.Equals(rewardedPlacementId)) return;
+        
+        Debug.Log("Unity Ads Rewarded Ad Completed");
+        // Grant a reward.
+        
+        GameManager.IncreaseTotalGoldByFactor(3);
+        uIManager.GoNextLevel();
+        
+        // Load another ad:
+        Advertisement.Load(rewardedPlacementId, this);
     }
  
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)

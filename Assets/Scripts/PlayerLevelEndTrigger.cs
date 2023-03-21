@@ -32,7 +32,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         uIManager.SetLevelTriesText();
         GameManager.SetLevelGoldGain();
         uIManager.SetLevelGainText(uIManager.goldGainText, 1);
-        GameManager.SetTotalGold();
+        GameManager.IncreaseTotalGoldByFactor(1);
         
         LevelLoader.SaveLevel();
         

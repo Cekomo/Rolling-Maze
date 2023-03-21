@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -22,9 +21,9 @@ public class GameManager : MonoBehaviour
         return _levelGoldGain;
     }
 
-    public static void SetTotalGold()
+    public static void IncreaseTotalGoldByFactor(int multiplier)
     {
-        var updatedTotalGold = PlayerPrefs.GetInt("GamePoint") + GetLevelGoldGain();
+        var updatedTotalGold = PlayerPrefs.GetInt("GamePoint") + GetLevelGoldGain() * multiplier;
         PlayerPrefs.SetInt("GamePoint", updatedTotalGold);
     }
     // start mechanism in UIManager will be implemented here
