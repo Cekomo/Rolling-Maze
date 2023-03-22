@@ -52,6 +52,4 @@ public class PlayerLevelEndTrigger : MonoBehaviour
 
         PlayerTouchController.SwipeDirection = SwipeDirection.Lock;
     }
-    
-    
 }

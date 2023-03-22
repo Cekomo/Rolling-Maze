@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
     public TMP_Text goldGainText;
     public TMP_Text adGainText;
     [SerializeField] private TMP_Text adGainFadingText;
-    
 
     [SerializeField] private Image[] inventorySlotEdges;
     private int previousSelectedSlot;
@@ -165,14 +164,13 @@ public class UIManager : MonoBehaviour
         levelEndPanel.gameObject.SetActive(false);
     }
 
-    public IEnumerator SetBonusGain()
+    private IEnumerator SetBonusGain()
     {
         var adGainFadingTextColor = adGainFadingText.color;
         var adGainFadingTextTransparency = adGainFadingTextColor.a;
         var adGainFadingTextPosition = adGainFadingText.transform.position;
 
-        var adBonus = SkinManager.LevelPoint * (1 + PlayerPrefs.GetInt("PointMultiplier") / 3) * 3;
-        adGainFadingText.text = "+" + adBonus + " G";
+        adGainFadingText.text = "+" + GameManager.GetLevelGoldGain() * 3 + " G";
         
         yield return new WaitForSeconds(0.2f);
         while (adGainFadingTextTransparency > 0)
