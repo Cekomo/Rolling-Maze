@@ -18,8 +18,8 @@ public class SkinManager : MonoBehaviour
 
     private void Awake()
     {
-        // if (PlayerPrefs.GetString("UnlockedSkins") == "")
-            // PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+        if (PlayerPrefs.GetString("UnlockedSkins") == "")
+            PlayerPrefs.SetString("UnlockedSkins", "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
         
         // print(PlayerPrefs.GetString("UnlockedSkins"));
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);

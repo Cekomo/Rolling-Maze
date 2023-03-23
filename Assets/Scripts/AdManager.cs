@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     {
         // showAdButton.interactable = false;
         Advertisement.Initialize(androidGameId, inTestMode, this);
+        LoadAd(interstitialPlacementId);
+        LoadAd(rewardedPlacementId);
     }
 
     private void LoadAd(string placementId)
@@ -29,14 +32,12 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     
     private void ShowInterstitialAd()
     {
-        // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + interstitialPlacementId);
         Advertisement.Show(interstitialPlacementId, this);
     }
     
     private void ShowRewardedAd()
     {
-        // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + rewardedPlacementId);
         showAdButton.interactable = false;
         Advertisement.Show(rewardedPlacementId, this);
@@ -44,7 +45,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     
     private void TryShowingInterstitialAd()
     {
-        LoadAd(interstitialPlacementId);
+        GameManager.IsEndPanelActive = true;
         ShowInterstitialAd();
     }
 
@@ -52,14 +53,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     {
         AdShowingCounter++;
         if (AdShowingCounter < 3) return;
-
+        
         TryShowingInterstitialAd();
         AdShowingCounter = 0;
     }
 
     public void TryShowingRewardedAd()
     {
-        LoadAd(rewardedPlacementId);
+        GameManager.IsEndPanelActive = true;
         ShowRewardedAd();
     }
 
@@ -87,17 +88,23 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
-        if (!showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED) 
-            || !adUnitId.Equals(rewardedPlacementId)) return;
-        
-        Debug.Log("Unity Ads Rewarded Ad Completed");
-        // Grant a reward.
-        
-        GameManager.IncreaseTotalGoldByFactor(3);
-        uIManager.GoNextLevel();
-        
-        // Load another ad:
-        Advertisement.Load(rewardedPlacementId, this);
+        // if (!isAdLoaded) return;
+
+        if (adUnitId.Equals(rewardedPlacementId))
+        {
+            if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+                GameManager.IncreaseTotalGoldByFactor(3);
+            
+            uIManager.CloseEndPanel();
+            uIManager.GoNextLevel();
+        }
+        else if (adUnitId.Equals(interstitialPlacementId))
+        {
+            
+        }
+
+        if (!uIManager.levelEndPanel.activeSelf) GameManager.IsEndPanelActive = false;
+        Advertisement.Load(adUnitId, this);
     }
  
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)

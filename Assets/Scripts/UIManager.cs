@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startPanelDefault;
     [SerializeField] private TMP_Text levelCount;
 
-    [SerializeField] private GameObject levelEndPanel;
+    [SerializeField] public GameObject levelEndPanel;
     [SerializeField] private TMP_Text levelTries;
     [SerializeField] private GameObject goldMultiplier;
 
@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);
     }
-    public void SetLevelCounter()
+    private void SetLevelCounter()
     {
         levelCount.text = "Level " + (LevelLoader.GetLevel() + 1);
     }
