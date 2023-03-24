@@ -26,19 +26,19 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     private void LoadAd(string placementId)
     {
-        Debug.Log("Showing Ad: " + placementId);
+        // Debug.Log("Showing Ad: " + placementId);
         Advertisement.Load(placementId, this);
     }
     
     private void ShowInterstitialAd()
     {
-        Debug.Log("Showing Ad: " + interstitialPlacementId);
+        // Debug.Log("Showing Ad: " + interstitialPlacementId);
         Advertisement.Show(interstitialPlacementId, this);
     }
     
     private void ShowRewardedAd()
     {
-        Debug.Log("Showing Ad: " + rewardedPlacementId);
+        // Debug.Log("Showing Ad: " + rewardedPlacementId);
         showAdButton.interactable = false;
         Advertisement.Show(rewardedPlacementId, this);
     }
@@ -64,8 +64,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         ShowRewardedAd();
     }
 
-    public void OnInitializationComplete() { Debug.Log("Unity Ads initialization complete."); }
- 
+    public void OnInitializationComplete() { /* Debug.Log("Unity Ads initialization complete."); */ }
+
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
         Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
@@ -74,7 +74,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     // Implement Load Listener interface methods: 
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        Debug.Log("Ad Loaded: " + adUnitId);
+        // Debug.Log("Ad Loaded: " + adUnitId);
  
         if (adUnitId.Equals(rewardedPlacementId))
         {
@@ -82,7 +82,6 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
             showAdButton.onClick.AddListener(ShowRewardedAd);
             // Enable the button for users to click:
             showAdButton.interactable = true;
-            UIManager.IsBonusReadyToPop = true;
         }
     }
     
@@ -94,17 +93,21 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         {
             if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
                 GameManager.IncreaseTotalGoldByFactor(3);
+            UIManager.IsBonusReadyToPop = true; 
             
             uIManager.CloseEndPanel();
             uIManager.GoNextLevel();
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
-            MazeMovementController.ResetRotationBehavior();
+            // insert here a boolean that controls level-loading wrt level-completion or not
+            // I guess below parameter blocks the controllers when level is loaded
+            print(GameManager.IsEndPanelActive);
+            if (GameManager.IsEndPanelActive) return; // becomes true
+            MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
-
-        print(uIManager.levelEndPanel.activeSelf);                            
+        
         if (!uIManager.levelEndPanel.activeSelf) GameManager.IsEndPanelActive = false;
         Advertisement.Load(adUnitId, this);
     }

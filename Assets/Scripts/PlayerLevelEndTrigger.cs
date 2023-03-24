@@ -52,7 +52,6 @@ public class PlayerLevelEndTrigger : MonoBehaviour
     private void OnCollisionExit(Collision col)
     {
         if (!col.gameObject.CompareTag("Floor")) return;
-
         PlayerTouchController.SwipeDirection = SwipeDirection.Lock;
     }
 }

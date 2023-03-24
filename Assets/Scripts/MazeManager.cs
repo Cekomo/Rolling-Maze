@@ -63,25 +63,4 @@
             mazeTransform.GetChild(1).GetComponent<Renderer>().material.color = wallColor;
             mazeTransform.GetChild(2).GetComponent<Renderer>().material.color = wallColor;
         }
-
-        // not used since mobile does not detect collision in run-time collision addition
-
-        private static void AddColliderToChildren()
-        {
-            var meshFilters = CurrentMaze.GetComponentsInChildren<MeshFilter>();
-            foreach (var filter in meshFilters)
-            {
-                var meshCollider = filter.gameObject.AddComponent<MeshCollider>();
-                meshCollider.sharedMesh = filter.sharedMesh;
-            }
-        }
-        
-        private static void TagChildren()
-        {
-            var mazeTransform = CurrentMaze.transform;
-            for (var i = 0; i < mazeTransform.childCount; i++)
-                mazeTransform.GetChild(i).tag = "Wall";
-            
-            mazeTransform.GetChild(mazeTransform.childCount - 1).tag = "Floor";
-        }
     }

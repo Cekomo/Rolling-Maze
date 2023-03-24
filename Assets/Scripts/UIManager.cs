@@ -161,7 +161,8 @@ public class UIManager : MonoBehaviour
 
     public void CloseEndPanel()
     {
-        levelEndPanel.gameObject.SetActive(false);
+        if (levelEndPanel.gameObject != null)    
+            levelEndPanel.gameObject.SetActive(false);
     }
 
     private IEnumerator SetBonusGain()
