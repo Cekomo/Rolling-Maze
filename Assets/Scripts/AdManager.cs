@@ -75,38 +75,30 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
         // Debug.Log("Ad Loaded: " + adUnitId);
- 
-        if (adUnitId.Equals(rewardedPlacementId))
-        {
-            // Configure the button to call the ShowAd() method when clicked:
-            showAdButton.onClick.AddListener(ShowRewardedAd);
-            // Enable the button for users to click:
-            showAdButton.interactable = true;
-        }
     }
     
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
+        // the problem is rewarded ad triggers one more i.e interstitial triggers than rewarded 
+        // on the other hand it should not get triggered
         GameManager.IsAdsActive = false;
-
+        print("zort");
         if (adUnitId.Equals(rewardedPlacementId))
         {
             if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
                 GameManager.IncreaseTotalGoldByFactor(3);
             UIManager.IsBonusReadyToPop = true; 
-            
+
             uIManager.CloseEndPanel();
             uIManager.GoNextLevel();
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
             if (GameManager.IsLevelCompleted) return; 
-            
+           
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
-        
-        Advertisement.Load(adUnitId, this);
     }
  
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)

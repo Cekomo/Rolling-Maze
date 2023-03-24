@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     {   
         if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f || 
             GameManager.IsStoreActive || GameManager.IsEndPanelActive || GameManager.IsAdsActive) return;
-        
+    
         storeButton.gameObject.SetActive(false);
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);
@@ -72,10 +72,16 @@ public class UIManager : MonoBehaviour
     
     public void SetStartPanelStatus(bool isActive)
     {
-        if (LevelLoader.GetLevel() != 0) 
-            startPanelDefault.SetActive(isActive);
-        else 
-            startPanelGuide.SetActive(isActive);
+        if (LevelLoader.GetLevel() != 0)
+        {
+            if (startPanelDefault != null)
+                startPanelDefault.SetActive(isActive);
+        }
+        else
+        {
+            if (startPanelDefault != null)
+                startPanelGuide.SetActive(isActive);
+        }
     }
     
     public void ToggleMute()
@@ -125,6 +131,7 @@ public class UIManager : MonoBehaviour
         
         SetLevelGainText(adGainText, 3);
         ToggleGoldMultiplier(true);
+        
         levelEndPanel.gameObject.SetActive(true);
     }
 
@@ -148,8 +155,8 @@ public class UIManager : MonoBehaviour
     public void GoNextLevel()
     {
         GameManager.IsEndPanelActive = false;
-        ToggleGoldMultiplier(false);
-        levelEndPanel.gameObject.SetActive(false);
+        // ToggleGoldMultiplier(false);
+        // levelEndPanel.gameObject.SetActive(false);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         
