@@ -1,12 +1,20 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     private static int _levelGoldGain;
     public static int LevelTriesMultiplier;
+    public static bool IsLevelCompleted;
     
     public static bool IsStoreActive { get; set; }
     public static bool IsEndPanelActive { get; set; }
+    public static bool IsAdsActive { get; set; }
+
+    private void Start()
+    {
+        IsLevelCompleted = false;
+    }
 
     public static void SetLevelGoldGain()
     {

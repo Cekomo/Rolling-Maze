@@ -45,7 +45,6 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     
     private void TryShowingInterstitialAd()
     {
-        GameManager.IsEndPanelActive = true;
         ShowInterstitialAd();
     }
 
@@ -55,13 +54,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         if (AdShowingCounter < 3) return;
         
         TryShowingInterstitialAd();
+        GameManager.IsAdsActive = true;
         AdShowingCounter = 0;
     }
 
     public void TryShowingRewardedAd()
     {
-        GameManager.IsEndPanelActive = true;
         ShowRewardedAd();
+        GameManager.IsAdsActive = true;
     }
 
     public void OnInitializationComplete() { /* Debug.Log("Unity Ads initialization complete."); */ }
@@ -87,7 +87,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
-        // if (!isAdLoaded) return;
+        GameManager.IsAdsActive = false;
 
         if (adUnitId.Equals(rewardedPlacementId))
         {
@@ -100,15 +100,12 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
-            // insert here a boolean that controls level-loading wrt level-completion or not
-            // I guess below parameter blocks the controllers when level is loaded
-            print(GameManager.IsEndPanelActive);
-            if (GameManager.IsEndPanelActive) return; // becomes true
+            if (GameManager.IsLevelCompleted) return; 
+            
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
         
-        if (!uIManager.levelEndPanel.activeSelf) GameManager.IsEndPanelActive = false;
         Advertisement.Load(adUnitId, this);
     }
  

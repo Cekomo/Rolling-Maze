@@ -31,6 +31,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         if (!col.gameObject.CompareTag("Finish")) return;
+        GameManager.IsLevelCompleted = true;
         
         uIManager.SetLevelTriesText();
         GameManager.SetLevelGoldGain();

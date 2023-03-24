@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.IsEndPanelActive) Stop(AudioType.BallRolling);
+        if (GameManager.IsEndPanelActive || GameManager.IsAdsActive) Stop(AudioType.BallRolling);
         if (PlayerTouchController.SwipeDirection != SwipeDirection.Up) return;
         
         Play(AudioType.BallRolling);

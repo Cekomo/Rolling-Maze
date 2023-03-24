@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     private void Update() // transfer this if you create a class like gameManager 
     {   
         if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f || 
-            GameManager.IsStoreActive || GameManager.IsEndPanelActive) return;
+            GameManager.IsStoreActive || GameManager.IsEndPanelActive || GameManager.IsAdsActive) return;
         
         storeButton.gameObject.SetActive(false);
         LevelLoader.PauseGame(false);
@@ -136,7 +136,8 @@ public class UIManager : MonoBehaviour
     private void ToggleGoldMultiplier(bool isActive)
     {
         // var goldMultiplierImage = goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier);
-        goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier).gameObject.SetActive(isActive);
+        if (goldMultiplier.gameObject != null)
+            goldMultiplier.transform.GetChild(GameManager.LevelTriesMultiplier).gameObject.SetActive(isActive);
     }
 
     public void SetLevelGainText(TMP_Text tmpText, int multiplier)
