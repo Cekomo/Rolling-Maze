@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
@@ -100,9 +100,11 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
-            
+            MazeMovementController.ResetRotationBehavior();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
 
+        print(uIManager.levelEndPanel.activeSelf);                            
         if (!uIManager.levelEndPanel.activeSelf) GameManager.IsEndPanelActive = false;
         Advertisement.Load(adUnitId, this);
     }

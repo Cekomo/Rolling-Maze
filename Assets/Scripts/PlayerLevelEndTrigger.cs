@@ -17,9 +17,12 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         PlayerPrefs.SetInt("LevelTries", PlayerPrefs.GetInt("LevelTries") + 1); // check if prefs get updated correctly
         
         adManager.ShowAdInEvery3Attempt(); // its place can be wrong
-        
-        MazeMovementController.ResetRotationBehavior();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+
+        if (AdManager.AdShowingCounter != 0)
+        {
+            MazeMovementController.ResetRotationBehavior();                                    
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);  
+        }
         
         LevelLoader.PauseGame(true);
         uIManager.SetStartPanelStatus(true);
