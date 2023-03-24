@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     public static bool IsEndPanelActive { get; set; }
     public static bool IsAdsActive { get; set; }
 
-    private void Start()
-    {
-        IsLevelCompleted = false;
-    }
+    // private void Start()
+    // {
+    //     IsLevelCompleted = false;
+    // }
 
     public static void SetLevelGoldGain()
     {

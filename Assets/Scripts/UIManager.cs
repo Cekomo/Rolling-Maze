@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     {   
         if (Input.touchCount == 0 || Input.touches[0].position.y > Screen.height * 0.8f || 
             GameManager.IsStoreActive || GameManager.IsEndPanelActive || GameManager.IsAdsActive) return;
-    
+       
         storeButton.gameObject.SetActive(false);
         LevelLoader.PauseGame(false);
         SetStartPanelStatus(false);
@@ -159,6 +159,7 @@ public class UIManager : MonoBehaviour
         // levelEndPanel.gameObject.SetActive(false);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        GameManager.IsLevelCompleted = false;
         
         SetLevelCounter();
         SetStartPanelStatus(true);

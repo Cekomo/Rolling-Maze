@@ -82,7 +82,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         // the problem is rewarded ad triggers one more i.e interstitial triggers than rewarded 
         // on the other hand it should not get triggered
         GameManager.IsAdsActive = false;
-        print("zort");
+      
         if (adUnitId.Equals(rewardedPlacementId))
         {
             if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
@@ -95,7 +95,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         else if (adUnitId.Equals(interstitialPlacementId))
         {
             if (GameManager.IsLevelCompleted) return; 
-           
+            print("zott");
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
