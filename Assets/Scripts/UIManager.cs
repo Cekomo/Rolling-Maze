@@ -55,8 +55,6 @@ public class UIManager : MonoBehaviour
         SetStartPanelStatus(true);
         storeButton.gameObject.SetActive(true);
 
-        if (!AdManager.IsAdShowable) adButton.interactable = false;
-   
         if (!IsBonusReadyToPop) return;
         IsBonusReadyToPop = false;
         StartCoroutine(SetBonusGain());
@@ -138,6 +136,7 @@ public class UIManager : MonoBehaviour
         
         SetLevelGainText(adGainText, 3);
         ToggleGoldMultiplier(true);
+        adButton.interactable = AdManager.IsAdShowable;
         
         levelEndPanel.gameObject.SetActive(true);
     }
