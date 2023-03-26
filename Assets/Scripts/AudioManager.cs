@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static bool IsGameMuted;
     public AudioSample[] audioSamples;
 
     private void Awake()
     {
-        // Play(AudioType.GameMusic);
+        IsGameMuted = PlayerPrefs.GetInt("GameVolume") != 1;
+        AudioListener.volume = PlayerPrefs.GetInt("GameVolume");
         
         foreach (var audioSample in audioSamples)
         {

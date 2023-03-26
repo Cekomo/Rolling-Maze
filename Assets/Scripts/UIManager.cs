@@ -24,8 +24,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image[] inventorySlotEdges;
     private int previousSelectedSlot;
-
-    private static bool IsMuted;
+    
     [SerializeField] private Button audioButton;
     private Image _unmuteImage;
     private Image _muteImage;
@@ -49,6 +48,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        _unmuteImage.gameObject.SetActive(!AudioManager.IsGameMuted);
+        _muteImage.gameObject.SetActive(AudioManager.IsGameMuted);
+        
         SetLevelCounter();
         SetStartPanelStatus(true);
         storeButton.gameObject.SetActive(true);
@@ -90,11 +92,12 @@ public class UIManager : MonoBehaviour
     
     public void ToggleMute()
     {
-        IsMuted = !IsMuted;
-        AudioListener.pause = IsMuted;
-
-        _unmuteImage.gameObject.SetActive(!IsMuted);
-        _muteImage.gameObject.SetActive(IsMuted);
+        AudioManager.IsGameMuted = !AudioManager.IsGameMuted;
+        PlayerPrefs.SetInt("GameVolume", AudioManager.IsGameMuted ? 0:1);
+        
+        AudioListener.volume = PlayerPrefs.GetInt("GameVolume");
+        _unmuteImage.gameObject.SetActive(!AudioManager.IsGameMuted);
+        _muteImage.gameObject.SetActive(AudioManager.IsGameMuted);
     }
 
     public void ToggleStore()
