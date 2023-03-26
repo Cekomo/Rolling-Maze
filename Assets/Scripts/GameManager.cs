@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
     public static bool IsEndPanelActive { get; set; }
     public static bool IsAdsActive { get; set; }
 
-    // private void Start()
-    // {
-    //     IsLevelCompleted = false;
-    // }
-
     public static void SetLevelGoldGain()
     {
         LevelTriesMultiplier = Mathf.Max(3 - PlayerPrefs.GetInt("LevelTries"), 0);

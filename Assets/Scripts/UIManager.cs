@@ -16,8 +16,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text goldCountText;
     [SerializeField] private TMP_Text skinCostText;
+    
     public TMP_Text goldGainText;
     public TMP_Text adGainText;
+    [SerializeField] private Button adButton;
     [SerializeField] private TMP_Text adGainFadingText;
 
     [SerializeField] private Image[] inventorySlotEdges;
@@ -50,6 +52,8 @@ public class UIManager : MonoBehaviour
         SetLevelCounter();
         SetStartPanelStatus(true);
         storeButton.gameObject.SetActive(true);
+
+        if (!AdManager.IsAdShowable) adButton.interactable = false;
    
         if (!IsBonusReadyToPop) return;
         IsBonusReadyToPop = false;

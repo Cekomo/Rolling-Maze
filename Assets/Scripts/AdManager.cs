@@ -10,6 +10,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     [SerializeField] private Button showAdButton;
 
     public static int AdShowingCounter;
+    public static bool IsAdShowable;
 
     [SerializeField] private string androidGameId;
     [SerializeField] private string interstitialPlacementId;
@@ -18,8 +19,9 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     private void Awake()
     {
-        // showAdButton.interactable = false;
         Advertisement.Initialize(androidGameId, inTestMode, this);
+
+        if (!IsAdShowable) return;
         LoadAd(interstitialPlacementId);
         LoadAd(rewardedPlacementId);
     }
@@ -64,11 +66,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         GameManager.IsAdsActive = true;
     }
 
-    public void OnInitializationComplete() { /* Debug.Log("Unity Ads initialization complete."); */ }
+    public void OnInitializationComplete()
+    {
+        IsAdShowable = true; 
+    }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
-        Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
+        IsAdShowable = false;
     }
     
     // Implement Load Listener interface methods: 
@@ -110,8 +115,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     // Implement Show Listener interface methods: 
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
     {
-        Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
-        // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
+        if (adUnitId.Equals(interstitialPlacementId))
+        {
+            if (GameManager.IsLevelCompleted) return;
+            
+            GameManager.IsAdsActive = false;
+            MazeMovementController.ResetRotationBehavior(); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
     }
  
     public void OnUnityAdsShowStart(string adUnitId) { }

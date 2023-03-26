@@ -9307,6 +9307,7 @@ MonoBehaviour:
   skinCostText: {fileID: 408770053}
   goldGainText: {fileID: 254739850}
   adGainText: {fileID: 1136123806}
+  adButton: {fileID: 632850347}
   adGainFadingText: {fileID: 1654821311}
   inventorySlotEdges:
   - {fileID: 411805424}
