@@ -94,8 +94,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
-            if (GameManager.IsLevelCompleted) return; 
-            print("zott");
+            if (GameManager.IsLevelCompleted) return;
+            
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
