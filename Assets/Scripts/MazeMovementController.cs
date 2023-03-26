@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class MazeMovementController : MonoBehaviour
 {   // coupling in playerMovementController class, for booleans, handle if you can
-    public const float INITIAL_ANGULAR_SPEED = 140f;
+    public const float INITIAL_ANGULAR_SPEED = 175f;
     private const float RADIUS_RING_DIFFERENCE = 1.825f;
     
-    private static float _angularSpeed = 140f;
+    private static float _angularSpeed = 175f;
     private static float _currentPathRadius = 1.825f;
     private static int _rotationDirection = 1;
     
