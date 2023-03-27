@@ -10,7 +10,7 @@
         private void Awake()
         {
             // if (PlayerPrefs.GetInt("LevelIndex") > 25) // GetInt("LevelIndex") * 10 > 40 MVP edition
-                PlayerPrefs.SetInt("LevelIndex", 13);
+                PlayerPrefs.SetInt("LevelIndex", 3);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
@@ -32,22 +32,26 @@
             switch (currentLevel)
             {
                 case < 5 and >= 0:
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.DarkGray]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
                     SkinManager.LevelPoint = 100;
                     break;
                 case < 15 and >= 5:
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.Sand]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
-                    PaintTheMaze(MazeModels.ColorDict[Colors.Mint], MazeModels.ColorDict[Colors.Scarlet]);
                     break;
                 case < 25 and >= 15:
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.LightGray]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy]);
                     SkinManager.LevelPoint = 200;
                     break;
                 case < 35 and >= 25:
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.Salmon]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Maroon], MazeModels.ColorDict[Colors.Peach]);
                     SkinManager.LevelPoint = 250;
                     break;
                 case < 45 and >= 35:
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.DarkGreen]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mint], MazeModels.ColorDict[Colors.Scarlet]);
                     SkinManager.LevelPoint = 300;
                     break;
@@ -62,5 +66,11 @@
 
             mazeTransform.GetChild(1).GetComponent<Renderer>().material.color = wallColor;
             mazeTransform.GetChild(2).GetComponent<Renderer>().material.color = wallColor;
+        }
+
+        private static void SetBackgroundColor(Color backgroundColor)
+        {
+            if (Camera.main != null)
+                Camera.main.backgroundColor = backgroundColor;
         }
     }

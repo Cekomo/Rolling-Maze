@@ -21,5 +21,10 @@ public enum Colors
     Peach,
     Mustard,
     Mint,
-    Scarlet
+    Scarlet,
+    LightGray,
+    Sand,
+    Salmon,
+    Cream,
+    LightPink
 }
