@@ -10,7 +10,7 @@
         private void Awake()
         {
             // if (PlayerPrefs.GetInt("LevelIndex") > 25) // GetInt("LevelIndex") * 10 > 40 MVP edition
-            // PlayerPrefs.SetInt("LevelIndex", 5);
+                PlayerPrefs.SetInt("LevelIndex", 13);
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
@@ -32,15 +32,15 @@
             switch (currentLevel)
             {
                 case < 5 and >= 0:
-                    PaintTheMaze(MazeModels.ColorDict[Colors.DarkGray], MazeModels.ColorDict[Colors.Gray]);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
                     SkinManager.LevelPoint = 100;
                     break;
                 case < 15 and >= 5:
-                    PaintTheMaze(MazeModels.ColorDict[Colors.Teal], MazeModels.ColorDict[Colors.Navy]);
-                    SkinManager.LevelPoint = 150;
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Mint], MazeModels.ColorDict[Colors.Scarlet]);
                     break;
                 case < 25 and >= 15:
-                    PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy]);
                     SkinManager.LevelPoint = 200;
                     break;
                 case < 35 and >= 25:
@@ -48,7 +48,7 @@
                     SkinManager.LevelPoint = 250;
                     break;
                 case < 45 and >= 35:
-                    PaintTheMaze(MazeModels.ColorDict[Colors.Orange], MazeModels.ColorDict[Colors.Navy]);
+                    PaintTheMaze(MazeModels.ColorDict[Colors.Mint], MazeModels.ColorDict[Colors.Scarlet]);
                     SkinManager.LevelPoint = 300;
                     break;
             }

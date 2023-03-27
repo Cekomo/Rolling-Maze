@@ -32,24 +32,19 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         Advertisement.Load(placementId, this);
     }
     
-    private void ShowInterstitialAd()
+    private void TryShowingInterstitialAd()
     {
         // Debug.Log("Showing Ad: " + interstitialPlacementId);
         Advertisement.Show(interstitialPlacementId, this);
     }
     
-    private void ShowRewardedAd()
+    public void TryShowingRewardedAd()
     {
         // Debug.Log("Showing Ad: " + rewardedPlacementId);
         showAdButton.interactable = false;
         Advertisement.Show(rewardedPlacementId, this);
     }
     
-    private void TryShowingInterstitialAd()
-    {
-        ShowInterstitialAd();
-    }
-
     public void ShowAdInEvery3Attempt()
     {
         AdShowingCounter++;
@@ -59,13 +54,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         GameManager.IsAdsActive = true;
         AdShowingCounter = 0;
     }
-
-    public void TryShowingRewardedAd()
-    {
-        ShowRewardedAd();
-        GameManager.IsAdsActive = true;
-    }
-
+    
     public void OnInitializationComplete()
     {
         IsAdShowable = true; 
@@ -126,8 +115,12 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         else if (adUnitId.Equals(rewardedPlacementId))
             IsAdShowable = false;
     }
- 
-    public void OnUnityAdsShowStart(string adUnitId) { }
+
+    public void OnUnityAdsShowStart(string adUnitId)
+    {
+        GameManager.IsAdsActive = true;
+    }
+    
     public void OnUnityAdsShowClick(string adUnitId) { }
     
     private void OnDestroy()

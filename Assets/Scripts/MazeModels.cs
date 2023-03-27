@@ -39,6 +39,9 @@ public class MazeModels : MonoBehaviour
             { Colors.Maroon, new Color(0.5f, 0.0f, 0.0f, 1.0f)},
             { Colors.Peach, new Color(1.0f, 0.9f, 0.7f, 1.0f)},
             { Colors.Mustard, new Color(1f, 0.86f, 0.35f, 1f)},
+            { Colors.Mint, new Color(0.62f, 0.8f, 0.67f, 1f)},
+            { Colors.Scarlet, new Color(0.6f, 0.1f, 0.1f, 1f)}
+            
         };
 
         // levelCount+2 is seems good for initial camera distance

@@ -20,4 +20,6 @@ public enum Colors
     Maroon,
     Peach,
     Mustard,
+    Mint,
+    Scarlet
 }
