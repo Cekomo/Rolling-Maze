@@ -117,12 +117,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     {
         if (adUnitId.Equals(interstitialPlacementId))
         {
+            GameManager.IsAdsActive = false;
             if (GameManager.IsLevelCompleted) return;
             
-            GameManager.IsAdsActive = false;
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
+        else if (adUnitId.Equals(rewardedPlacementId))
+            IsAdShowable = false;
     }
  
     public void OnUnityAdsShowStart(string adUnitId) { }
