@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
 
     public void SetSlotColorAsSelected(int slotIndex)
     {
-        inventorySlotEdges[previousSelectedSlot].color = MazeModels.ColorDict[Colors.Teal];
+        inventorySlotEdges[previousSelectedSlot].color = MazeModels.ColorDict[Colors.Black];
         inventorySlotEdges[slotIndex].color = MazeModels.ColorDict[Colors.LightBlue];
         previousSelectedSlot = slotIndex;
     }
@@ -136,6 +136,7 @@ public class UIManager : MonoBehaviour
         
         SetLevelGainText(adGainText, 3);
         ToggleGoldMultiplier(true);
+        if (Application.internetReachability == NetworkReachability.NotReachable) AdManager.IsAdShowable = false;
         adButton.interactable = AdManager.IsAdShowable;
         
         levelEndPanel.gameObject.SetActive(true);

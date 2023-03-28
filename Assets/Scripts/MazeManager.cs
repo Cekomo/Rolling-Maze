@@ -5,12 +5,13 @@
         public MazeModels mazeModels;
         public Transform mazeContainer;
         
-        public static GameObject CurrentMaze;
+        private static GameObject CurrentMaze;
         
         private void Awake()
         {
             // if (PlayerPrefs.GetInt("LevelIndex") > 25) // GetInt("LevelIndex") * 10 > 40 MVP edition
-                PlayerPrefs.SetInt("LevelIndex", 3);
+                // PlayerPrefs.SetInt("LevelIndex", 9);
+                
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();
             DecideMazeColor();
@@ -39,6 +40,7 @@
                 case < 15 and >= 5:
                     SetBackgroundColor(MazeModels.ColorDict[Colors.Sand]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mustard], MazeModels.ColorDict[Colors.DarkGreen]);
+                    SkinManager.LevelPoint = 150;
                     break;
                 case < 25 and >= 15:
                     SetBackgroundColor(MazeModels.ColorDict[Colors.LightGray]);
@@ -51,7 +53,7 @@
                     SkinManager.LevelPoint = 250;
                     break;
                 case < 45 and >= 35:
-                    SetBackgroundColor(MazeModels.ColorDict[Colors.DarkGreen]);
+                    SetBackgroundColor(MazeModels.ColorDict[Colors.LightBrown]);
                     PaintTheMaze(MazeModels.ColorDict[Colors.Mint], MazeModels.ColorDict[Colors.Scarlet]);
                     SkinManager.LevelPoint = 300;
                     break;

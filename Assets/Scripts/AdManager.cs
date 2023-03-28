@@ -16,6 +16,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     [SerializeField] private string interstitialPlacementId;
     [SerializeField] private string rewardedPlacementId;
     [SerializeField] private bool inTestMode;
+    
+    private string url = "https://www.google.com";
 
     private void Awake()
     {
@@ -54,7 +56,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         GameManager.IsAdsActive = true;
         AdShowingCounter = 0;
     }
-    
+
     public void OnInitializationComplete()
     {
         IsAdShowable = true; 

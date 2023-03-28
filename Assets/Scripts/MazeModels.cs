@@ -12,9 +12,8 @@ public class MazeModels : MonoBehaviour
     public static Dictionary<Colors, Color> ColorDict;
 
     private void Awake()
-     { 
-         // PlayerPrefs.SetInt("LevelIndex", 2);
-        MaximumLevel = mazeModelList.Count - 1;
+     {
+         MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
         ColorDict = new Dictionary<Colors, Color>() // possible to use it inside another class
@@ -46,7 +45,7 @@ public class MazeModels : MonoBehaviour
             { Colors.Cream, new Color(1f, 1f, 0.9f, 1f)},
             { Colors.LightPink, new Color(1f, 0.8f, 0.8f, 1f)},
             { Colors.Sand, new Color(0.95f, 0.9f, 0.7f, 1f)},
-            
+            { Colors.LightBrown, new Color(0.8f, 0.7f, 0.55f, 1.0f)}
         };
 
         // levelCount+2 is seems good for initial camera distance

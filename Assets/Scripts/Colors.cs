@@ -26,5 +26,6 @@ public enum Colors
     Sand,
     Salmon,
     Cream,
-    LightPink
+    LightPink,
+    LightBrown
 }
