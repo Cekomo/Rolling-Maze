@@ -23,7 +23,7 @@ public class SkinManager : MonoBehaviour
         
         // PlayerPrefs.SetInt("CurrentSkinIndex", 0);
         // if (PlayerPrefs.GetInt("GamePoint") < 2000)
-        //     PlayerPrefs.SetInt("GamePoint", 35000);
+        PlayerPrefs.SetInt("GamePoint", 35000);
         
         BallSkinCosts = new int[20];
         BallSkinCosts = new[]
