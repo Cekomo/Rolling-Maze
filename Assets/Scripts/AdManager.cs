@@ -23,10 +23,6 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     {
         StartCoroutine(CheckInternetAtStart());
         StartCoroutine(CheckInternetRegularly());
-
-        // if (!IsAdShowable) return;
-        // LoadAd(interstitialPlacementId);
-        // LoadAd(rewardedPlacementId);
     }
 
     private void LoadAd(string placementId)
@@ -38,7 +34,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     private void TryShowingInterstitialAd()
     {
         // Debug.Log("Showing Ad: " + interstitialPlacementId);
-        if (IsInternetReachable())
+        if (IsInternetReachable()) // there was a problem at first where this is triggered during initialization fail
         {
             GameManager.IsAdsActive = true;
             Advertisement.Show(interstitialPlacementId, this);
@@ -62,9 +58,10 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
             showAdButton.interactable = false;
             Advertisement.Show(rewardedPlacementId, this);
         }
-        else
+        else 
         {
-            
+            IsAdShowable = false;
+            showAdButton.interactable = false;
         }
     }
     
@@ -110,7 +107,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         wasInternetConnected = IsInternetReachable();
     }
     
-    private static bool IsInternetReachable()
+    public static bool IsInternetReachable()
     {
         return Application.internetReachability != NetworkReachability.NotReachable;
     }

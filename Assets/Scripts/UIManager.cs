@@ -136,10 +136,8 @@ public class UIManager : MonoBehaviour
         
         SetLevelGainText(adGainText, 3);
         ToggleGoldMultiplier(true);
-        if (Application.internetReachability == NetworkReachability.NotReachable) adGainFadingText.text = 
-            (PlayerPrefs.GetInt("LevelTries") + 1).ToString();
-        adButton.interactable = AdManager.IsAdShowable;
         
+        adButton.interactable = AdManager.IsInternetReachable();
         levelEndPanel.gameObject.SetActive(true);
     }
 

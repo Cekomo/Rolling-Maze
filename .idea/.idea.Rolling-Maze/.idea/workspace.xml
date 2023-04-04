@@ -4,17 +4,19 @@
     <list default="true" id="de48d0bb-35bf-4f0f-b921-935bf3948062" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rolling-Maze/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rolling-Maze/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AdManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AdManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MazeModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MazeModels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkinManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkinManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MazeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MazeManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCFieldValuesTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCFieldValuesTable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCTypeValuesTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCTypeValuesTable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCalculateFieldValues1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCalculateFieldValues1.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCalculateTypeValues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppCCalculateTypeValues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppMetadataRegistration.c" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppMetadataRegistration.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppMetadataUsage.c" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppMetadataUsage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppRgctxTable.c" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppRgctxTable.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppTypeDefinitions.c" beforeDir="false" afterPath="$PROJECT_DIR$/PlayableFiles/Rolling-Odyssey_fr1_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Il2CppTypeDefinitions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +124,8 @@
       <workItem from="1680212389583" duration="713000" />
       <workItem from="1680230838422" duration="3375000" />
       <workItem from="1680456406874" duration="1490000" />
-      <workItem from="1680528468950" duration="14383000" />
+      <workItem from="1680528468950" duration="16503000" />
+      <workItem from="1680609736167" duration="2110000" />
     </task>
     <servers />
   </component>
