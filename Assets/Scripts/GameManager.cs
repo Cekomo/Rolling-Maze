@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     private static int _levelGoldGain;
     public static int LevelTriesMultiplier;
     public static bool IsLevelCompleted;
-    
+
     public static bool IsStoreActive { get; set; }
     public static bool IsEndPanelActive { get; set; }
     public static bool IsAdsActive { get; set; }
@@ -30,4 +30,5 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("GamePoint", updatedTotalGold);
     }
     // start mechanism in UIManager will be implemented here
+    
 }

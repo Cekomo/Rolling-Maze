@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.SceneManagement;
@@ -11,21 +12,21 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     public static int AdShowingCounter;
     public static bool IsAdShowable;
+    private  static bool wasInternetConnected;
 
     [SerializeField] private string androidGameId;
     [SerializeField] private string interstitialPlacementId;
     [SerializeField] private string rewardedPlacementId;
     [SerializeField] private bool inTestMode;
-    
-    private string url = "https://www.google.com";
 
-    private void Awake()
+    private void Start()
     {
-        Advertisement.Initialize(androidGameId, inTestMode, this);
+        StartCoroutine(CheckInternetAtStart());
+        StartCoroutine(CheckInternetRegularly());
 
-        if (!IsAdShowable) return;
-        LoadAd(interstitialPlacementId);
-        LoadAd(rewardedPlacementId);
+        // if (!IsAdShowable) return;
+        // LoadAd(interstitialPlacementId);
+        // LoadAd(rewardedPlacementId);
     }
 
     private void LoadAd(string placementId)
@@ -37,14 +38,34 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     private void TryShowingInterstitialAd()
     {
         // Debug.Log("Showing Ad: " + interstitialPlacementId);
-        Advertisement.Show(interstitialPlacementId, this);
+        if (IsInternetReachable())
+        {
+            GameManager.IsAdsActive = true;
+            Advertisement.Show(interstitialPlacementId, this);
+            AdShowingCounter = 0;
+        }
+        else
+        {
+            GameManager.IsAdsActive = false;    
+            if (GameManager.IsLevelCompleted) return;
+            
+            MazeMovementController.ResetRotationBehavior(); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
     }
     
     public void TryShowingRewardedAd()
     {
         // Debug.Log("Showing Ad: " + rewardedPlacementId);
-        showAdButton.interactable = false;
-        Advertisement.Show(rewardedPlacementId, this);
+        if (IsInternetReachable())
+        {
+            showAdButton.interactable = false;
+            Advertisement.Show(rewardedPlacementId, this);
+        }
+        else
+        {
+            
+        }
     }
     
     public void ShowAdInEvery3Attempt()
@@ -53,10 +74,47 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         if (AdShowingCounter < 3) return;
         
         TryShowingInterstitialAd();
-        GameManager.IsAdsActive = true;
-        AdShowingCounter = 0;
     }
 
+    private void ImplementAd()
+    {
+        Advertisement.Initialize(androidGameId, inTestMode, this);
+        LoadAd(interstitialPlacementId);
+        LoadAd(rewardedPlacementId);
+    }
+    
+    private IEnumerator CheckInternetRegularly()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+
+            if ((!wasInternetConnected && IsInternetReachable()) || !IsAdShowable)
+            {
+                ImplementAd();
+            }
+            
+            wasInternetConnected = IsInternetReachable();
+        }
+    }
+
+    private IEnumerator CheckInternetAtStart()
+    {
+        yield return null;
+
+        if (IsInternetReachable())
+        {
+            ImplementAd();
+        }
+
+        wasInternetConnected = IsInternetReachable();
+    }
+    
+    private static bool IsInternetReachable()
+    {
+        return Application.internetReachability != NetworkReachability.NotReachable;
+    }
+    
     public void OnInitializationComplete()
     {
         IsAdShowable = true; 
@@ -81,6 +139,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
       
         if (adUnitId.Equals(rewardedPlacementId))
         {
+            // LoadAd(rewardedPlacementId);
+            
             if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
                 GameManager.IncreaseTotalGoldByFactor(3);
             UIManager.IsBonusReadyToPop = true; 
@@ -90,6 +150,8 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         }
         else if (adUnitId.Equals(interstitialPlacementId))
         {
+            // LoadAd(interstitialPlacementId);
+            
             if (GameManager.IsLevelCompleted) return;
             
             MazeMovementController.ResetRotationBehavior(); 

@@ -47319,8 +47319,6 @@ struct AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91  : public MonoBehavio
 	String_t* ___rewardedPlacementId_10;
 	// System.Boolean AdManager::inTestMode
 	bool ___inTestMode_11;
-	// System.String AdManager::url
-	String_t* ___url_12;
 };
 
 struct AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields

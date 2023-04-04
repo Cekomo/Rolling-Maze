@@ -12,8 +12,8 @@ public class MazeModels : MonoBehaviour
     public static Dictionary<Colors, Color> ColorDict;
 
     private void Awake()
-     {
-         MaximumLevel = mazeModelList.Count - 1;
+    { 
+        MaximumLevel = mazeModelList.Count - 1;
         MazeScaleList = new int[MaximumLevel + 1];
 
         ColorDict = new Dictionary<Colors, Color>() // possible to use it inside another class
@@ -50,13 +50,13 @@ public class MazeModels : MonoBehaviour
 
         // levelCount+2 is seems good for initial camera distance
         MazeScaleList = new[] { 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 
-            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
+          8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
         // MazeScaleList = new[] { 5, 6, 7, 8, 9}; // MVP edition
-        
-        for (var i = 0; i < MazeScaleList.Length; i++)
+
+        for (var i = 0; i < MazeScaleList.Length; i++) 
             if (MazeScaleList[i] == 0)
                 MazeScaleList[i] = SMALLEST_SCALE;
-        
+
         var theMazeScale = MazeScaleList[LevelLoader.GetLevel()]; // * 10 MVP
         CameraMovementController.PausedOffset = new Vector3(0, theMazeScale * 5, theMazeScale * -4f);
     }

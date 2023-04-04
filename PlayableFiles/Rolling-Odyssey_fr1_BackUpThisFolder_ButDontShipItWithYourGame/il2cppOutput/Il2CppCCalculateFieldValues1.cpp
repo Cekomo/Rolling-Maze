@@ -7523,8 +7523,6 @@ struct AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91  : public MonoBehavio
 	String_t* ___rewardedPlacementId_10;
 	// System.Boolean AdManager::inTestMode
 	bool ___inTestMode_11;
-	// System.String AdManager::url
-	String_t* ___url_12;
 };
 
 struct AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields
@@ -8802,9 +8800,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3410[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3411[5] = 
 {
 	static_cast<int32_t>(offsetof(GlyphMarshallingStruct_tB45F92185E1A4A7880004B36591D7C73E4A2B87C, ___index_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(GlyphMarshallingStruct_tB45F92185E1A4A7880004B36591D7C73E4A2B87C, ___metrics_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(GlyphMarshallingStruct_tB45F92185E1A4A7880004B36591D7C73E4A2B87C, ___glyphRect_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(GlyphMarshallingStruct_tB45F92185E1A4A7880004B36591D7C73E4A2B87C, ___scale_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(GlyphMarshallingStruct_tB45F92185E1A4A7880004B36591D7C73E4A2B87C, ___atlasIndex_4)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3413[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3413[8] = 
 {
-	static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___uIManager_4)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___showAdButton_5)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields, ___AdShowingCounter_6)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields, ___IsAdShowable_7)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___androidGameId_8)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___interstitialPlacementId_9)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___rewardedPlacementId_10)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___inTestMode_11)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___url_12)),};
+	static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___uIManager_4)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___showAdButton_5)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields, ___AdShowingCounter_6)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91_StaticFields, ___IsAdShowable_7)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___androidGameId_8)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___interstitialPlacementId_9)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___rewardedPlacementId_10)),static_cast<int32_t>(offsetof(AdManager_t1389D7135E1F558C870341BC4735A200ABA80F91, ___inTestMode_11)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3414[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass4_0_t36B6A311D50E42EC59D3E1E83957D22EB610DD89, ___audioType_0)),};

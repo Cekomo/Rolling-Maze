@@ -17,7 +17,7 @@ public static class LevelLoader
             return;
         }
         
-        PlayerPrefs.SetInt("LevelIndex", GetLevel() + 5);
+        PlayerPrefs.SetInt("LevelIndex", GetLevel() + 1);
     }
 
     public static void PauseGame(bool isPaused)
