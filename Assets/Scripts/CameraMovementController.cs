@@ -5,7 +5,8 @@ public class CameraMovementController : MonoBehaviour
     [SerializeField] private Transform target;
     
     public static Vector3 PausedOffset;
-    private static readonly Vector3 FollowingOffset = new(0f, 10f, -10f);
+    // private static readonly Vector3 FollowingOffset = new(0f, 10f, -10f);
+    private static readonly Vector3 FollowingOffset = new(0f, 20f, 0f);
 
     private Vector3 _velocity = Vector3.zero;
 
