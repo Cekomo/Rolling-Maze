@@ -4,9 +4,14 @@
     <list default="true" id="de48d0bb-35bf-4f0f-b921-935bf3948062" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rolling-Maze/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rolling-Maze/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/PlayerRollingCircular.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/PlayerRollingCircular.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/PlayerRollingForward.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/PlayerRollingForward.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BallPhysic.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BallPhysic.physicMaterial" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MazeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MazeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +121,7 @@
       <workItem from="1680528468950" duration="16503000" />
       <workItem from="1680609736167" duration="3295000" />
       <workItem from="1680650505483" duration="5324000" />
-      <workItem from="1680691865587" duration="674000" />
+      <workItem from="1680691865587" duration="11605000" />
     </task>
     <servers />
   </component>

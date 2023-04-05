@@ -4,23 +4,23 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour // increase of radius in each path 1.828, 3.655..
 {
     private const int ARTIFICIAL_GRAVITY = 15;
-    private const float TORQUE = 638; 
+    private const int ROLLING_SPEED = 200;
+    private const float RING_DISTANCE = 2f;
     private const float ROLLING_TIME = 0.3f;
-    private const float ROLLING_SPEED = 300f;
+    private const float VELOCITY = RING_DISTANCE / ROLLING_TIME;
 
     private static Rigidbody _rbBall;
 
     private void Start()
     {
         _rbBall = GetComponent<Rigidbody>();
-        _rbBall.maxAngularVelocity = 60f; 
     }
 
     private void Update()
     {
         if (MazeMovementController.PreventRotation) return;
         
-        RotateInPlace();
+        RotateInCircularPath();
     }
 
     private void FixedUpdate()
@@ -47,30 +47,31 @@ public class PlayerMovementController : MonoBehaviour // increase of radius in e
         PlayerTouchController.SwipeDirection = SwipeDirection.None;
     }
 
-    private static void AddTorque() // mass = 3
+    private IEnumerator MoveBall()
     {
-        if (PlayerTouchController.SwipeDirection == SwipeDirection.None) return;
-        _rbBall.AddTorque(Vector3.right * TORQUE);
-    }
-
-    private static void RevertTorque()
-    {
-        _rbBall.angularVelocity = Vector3.zero;
-        _rbBall.velocity = Vector3.zero;
-    }
-    
-    private static IEnumerator MoveBall()
-    {
-        AddTorque();
         MazeMovementController.PreventRotation = true;
-        yield return new WaitForSeconds(ROLLING_TIME);
+        
+        var startPosition = transform.position;
+        var endPosition = new Vector3(startPosition.x, startPosition.y, startPosition.z + RING_DISTANCE);
 
+        while (Vector3.Distance(transform.position, endPosition) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, endPosition, 
+                VELOCITY * Time.deltaTime);
+            RotateForward();
+            yield return null;
+        }
+  
         if (PlayerTouchController.SwipeDirection == SwipeDirection.Lock) yield break;
-        RevertTorque();
         MazeMovementController.PreventRotation = false;
     }
 
-    private void RotateInPlace()
+    private void RotateForward()
+    {
+        transform.Rotate(ROLLING_SPEED * Time.deltaTime * 3, 0f, 0f, Space.World);
+    }
+
+    private void RotateInCircularPath()
     {
         transform.Rotate(0f, 0f, 
             MazeMovementController.GetRotationDirection() * ROLLING_SPEED * Time.deltaTime, 
