@@ -14,9 +14,9 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         
         if (!col.gameObject.CompareTag("Wall")) return;
         
-        PlayerPrefs.SetInt("LevelTries", PlayerPrefs.GetInt("LevelTries") + 1); // check if prefs get updated correctly
+        PlayerPrefs.SetInt("LevelTries", PlayerPrefs.GetInt("LevelTries") + 1);
         
-        adManager.ShowAdInEvery3Attempt(); // its place can be wrong
+        adManager.ShowAdInEvery3Attempt(); 
 
         if (AdManager.AdShowingCounter != 0)
         {
@@ -45,7 +45,7 @@ public class PlayerLevelEndTrigger : MonoBehaviour
         MazeMovementController.ResetRotationBehavior();
         LevelLoader.PauseGame(true);
         
-        adManager.ShowAdInEvery3Attempt(); // its place can be wrong
+        adManager.ShowAdInEvery3Attempt();
         
         uIManager.SetLevelEndPanel();
     }

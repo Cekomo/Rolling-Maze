@@ -27,13 +27,11 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     private void LoadAd(string placementId)
     {
-        // Debug.Log("Showing Ad: " + placementId);
         Advertisement.Load(placementId, this);
     }
     
     private void TryShowingInterstitialAd()
     {
-        // Debug.Log("Showing Ad: " + interstitialPlacementId);
         if (IsInternetReachable()) // there was a problem at first where this is triggered during initialization fail
         {
             GameManager.IsAdsActive = true;
@@ -97,7 +95,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     private IEnumerator CheckInternetAtStart()
     {
-        yield return null;
+        yield return new WaitForSeconds(3f);
 
         if (IsInternetReachable())
         {
@@ -122,10 +120,14 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
         IsAdShowable = false;
     }
     
-    // Implement Load Listener interface methods: 
+    public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
+    {
+        IsAdShowable = false;
+    }
+
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        // Debug.Log("Ad Loaded: " + adUnitId);
+        IsAdShowable = true;
     }
     
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
@@ -154,12 +156,6 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
             MazeMovementController.ResetRotationBehavior(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
-    }
- 
-    public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
-    {
-        Debug.Log($"Error loading Ad Unit: {adUnitId} - {error.ToString()} - {message}");
-        // Optionally execute code if the Ad Unit fails to load, such as attempting to try again.
     }
     
     // Implement Show Listener interface methods: 
