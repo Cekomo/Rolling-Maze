@@ -9,10 +9,10 @@
         
         private void Awake()
         {
-            if (PlayerPrefs.GetInt("LevelIndex") != 6) // GetInt("LevelIndex") * 10 > 40 MVP edition
-                PlayerPrefs.SetInt("LevelIndex", 6);
-            else 
-                PlayerPrefs.SetInt("LevelIndex", 44);
+            // if (PlayerPrefs.GetInt("LevelIndex") == 44) // GetInt("LevelIndex") * 10 > 40 MVP edition
+            //     PlayerPrefs.SetInt("LevelIndex", 0);
+            // else 
+            //     PlayerPrefs.SetInt("LevelIndex", 44);
                 
             LevelLoader.PauseGame(true);
             InstantiateNewMaze();

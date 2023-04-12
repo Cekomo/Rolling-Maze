@@ -159,6 +159,7 @@ public class UIManager : MonoBehaviour
     public void OnClickRateUs()
     {
         Application.OpenURL("market://details?id=" + Application.identifier);
+        ratePanel.gameObject.SetActive(false);
     }
     
     public void SetLevelTriesText()
