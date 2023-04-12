@@ -3691,7 +3691,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1915962334}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoNextLevel
+        m_MethodName: GoLevelEndPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4505,7 +4505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &860053440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10285,7 +10285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1890701937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1915962334}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnClickRateUs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890701937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10789,6 +10801,7 @@ MonoBehaviour:
   - {fileID: 6768718748928143374, guid: 7394b6669f407624bb4db99b6a2ecc4a, type: 3}
   - {fileID: 452229338230214063, guid: 389c6cc0b2780484f80f41d39a0662af, type: 3}
   - {fileID: 2870028378418129132, guid: 906ee58ceb347ad48b9d886a6abe4fc7, type: 3}
+  - {fileID: 9003712651480948107, guid: d27d58e904b223447bd4466ed1078801, type: 3}
   - {fileID: 7972406864709057256, guid: f18b33dd15d315442b3866e2db80c584, type: 3}
   - {fileID: 8375851515955662297, guid: 16c7976432d431641b4ee0f544f6f556, type: 3}
   - {fileID: 4337837011697881883, guid: 08dc6e9f57659af40b50b901718c6589, type: 3}
@@ -10826,7 +10839,6 @@ MonoBehaviour:
   - {fileID: 5386314849176252218, guid: dac62e2e31dd7d54da8db801a0a55d3a, type: 3}
   - {fileID: 6934237792223978059, guid: 1314c34ca6df02c40b99907ea3f422aa, type: 3}
   - {fileID: 5371917259710268357, guid: c7991ae35bde0564b9e1ce27180f2808, type: 3}
-  - {fileID: 9003712651480948107, guid: d27d58e904b223447bd4466ed1078801, type: 3}
 --- !u!4 &1915962332
 Transform:
   m_ObjectHideFlags: 0
@@ -11373,7 +11385,7 @@ GameObject:
   - component: {fileID: 1979436789}
   - component: {fileID: 1979436788}
   m_Layer: 5
-  m_Name: AdButton
+  m_Name: ReviewButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11444,7 +11456,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1979436789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1915962334}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnClickRateUs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1979436789
 MonoBehaviour:
   m_ObjectHideFlags: 0

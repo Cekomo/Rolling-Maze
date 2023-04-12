@@ -142,12 +142,25 @@ public class UIManager : MonoBehaviour
         
         adButton.interactable = AdManager.IsInternetReachable();
         
-        if (LevelLoader.GetLevel() != MazeModels.MaximumLevel)
+        if (LevelLoader.GetLevel() == 7)
+            ratePanel.gameObject.SetActive(true);
+        else if (LevelLoader.GetLevel() != MazeModels.MaximumLevel)
             levelEndPanel.gameObject.SetActive(true);
         else
             gameEndPanel.gameObject.SetActive(true);
     }
 
+    public void GoLevelEndPanel()
+    {
+        ratePanel.gameObject.SetActive(false);
+        levelEndPanel.gameObject.SetActive(true);
+    }
+
+    public void OnClickRateUs()
+    {
+        Application.OpenURL("market://details?id=" + Application.identifier);
+    }
+    
     public void SetLevelTriesText()
     {
         levelTries.text = (PlayerPrefs.GetInt("LevelTries") + 1).ToString();
