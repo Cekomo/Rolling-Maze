@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text levelCount;
 
     [SerializeField] public GameObject levelEndPanel;
+    [SerializeField] public GameObject gameEndPanel;
+    [SerializeField] public GameObject ratePanel;
+
     [SerializeField] private TMP_Text levelTries;
     [SerializeField] private GameObject goldMultiplier;
 
@@ -138,7 +141,11 @@ public class UIManager : MonoBehaviour
         ToggleGoldMultiplier(true);
         
         adButton.interactable = AdManager.IsInternetReachable();
-        levelEndPanel.gameObject.SetActive(true);
+        
+        if (LevelLoader.GetLevel() != MazeModels.MaximumLevel)
+            levelEndPanel.gameObject.SetActive(true);
+        else
+            gameEndPanel.gameObject.SetActive(true);
     }
 
     public void SetLevelTriesText()
